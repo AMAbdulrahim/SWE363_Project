@@ -1,0 +1,140 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="VAE.css">
+    <title>Document</title>
+
+
+<script>
+
+
+    // Wait for the DOM content to be loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Select the #cardsSection element
+    var cardsSection = document.getElementById('cardsSection');
+    
+    // Loop to create and add #cardID five times
+    for (var i = 0; i < 10; i++) {
+        // Create a new div element for the card
+        var cardDiv = document.createElement('div');
+        cardDiv.className = 'card'; // Set the class name
+        
+        // HTML content for the card
+        cardDiv.innerHTML = `
+            <div class="img-card">
+                <img src="images/card-img-placeholder.png" alt="">
+            </div>
+            <div class="title-card">
+                <h1>EVENT NAME ${i}</h1>
+            </div>
+            <div class="des-card">
+                <div class="des">
+                    <h5 id="event-des">Description about the event</h5>
+                    <h5 id="event-date">Date: ${15+i}/12/2024</h5>
+                    <h5 id="event-time">Time: 3:30 pm</h5>
+                </div>
+                <div class="card-button">
+                    <button class="add-button">
+                        <img style="width: 50px; height: 50px; padding: 0 10px 10px 0;" src="images/326501_add_circle_icon.svg" alt="">
+                    </button>
+                </div>
+            </div>
+        `;
+        
+        // Append the card to the cardsSection
+        cardsSection.appendChild(cardDiv);
+    }
+});
+
+</script>
+
+</head>
+
+
+
+<body>
+ 
+    <header>
+        <div  id="logo">
+           <img id="logoimg" src="images/logo.png" alt="">
+           <label id="tbn" for="">Name</label>
+
+        </div>
+        
+        <div id="pfp">
+           <img id="pfpimg" src="images/pfp.png" alt=""> 
+        </div>
+    </header>
+
+
+<main>
+
+<div class="search-section">
+
+    <div>
+        <form id="form">
+            <input type="search" id="query" name="q" placeholder="Search">
+            <button>
+             <svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg>
+            </button>
+        </form>
+    </div>
+</div>
+
+<div class="cards-section" id="cardsSection">
+
+    
+
+
+
+    <div class="card" id="cardID">
+
+        <div class="img-card">
+            <img src="images/card-img-placeholder.png" alt="">
+
+        </div>
+
+        <div class="title-card">
+            <h1>MAIN</h1>
+
+        </div>
+
+        <div class="des-card">
+           <div class="des">
+                <h5 id="event-des">Description about the event</h5>
+                <h5 id="event-date">Date: 31/12/2024</h5>
+                <h5 id="event-time">Time: 3:30 pm</h5>
+
+            </div>
+            <div class="card-button">
+            <button class="add-button">
+                <img style="width: 50px; height: 50px; padding: 0 10px 10px 0;" src="images/326501_add_circle_icon.svg" alt="">
+            </button>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+</main>
+
+
+
+
+
+
+    <footer>
+        <div>
+
+            <label id="contact" for="">contact us</label>
+            <img src="images/email-icon.png" alt="">
+            <img src="images/insta-icon.png" alt="">
+            <img src="images/x-icon.png" alt="">
+        </div>
+    </footer>
+    
+</body>
+</html>
