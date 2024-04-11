@@ -3,78 +3,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="VAE.css">
-    <title>Document</title>
-
-
+    <link rel="stylesheet" href="HeaderFooter.css">
+    <link rel="stylesheet" href="searchBar.css">
+    <script type="text/javascript" src="script.js"></script>
+   
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>  <!--for the scroll up button-->
 <script>
-
-
-    // Wait for the DOM content to be loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // Select the #cardsSection element
-    var cardsSection = document.getElementById('cardsSection');
-    
-    // Loop to create and add #cardID five times
-    for (var i = 0; i < 10; i++) {
-        // Create a new div element for the card
-        var cardDiv = document.createElement('div');
-        cardDiv.className = 'card'; // Set the class name
-        
-        // HTML content for the card
-        cardDiv.innerHTML = `
-            <div class="img-card">
-                <img src="images/card-img-placeholder.png" alt="">
-            </div>
-            <div class="title-card">
-                <h1>EVENT NAME ${i}</h1>
-            </div>
-            <div class="des-card">
-                <div class="des">
-                    <h5 id="event-des">Description about the event</h5>
-                    <h5 id="event-date">Date: ${15+i}/12/2024</h5>
-                    <h5 id="event-time">Time: 3:30 pm</h5>
-                </div>
-                <div class="card-button">
-                    <button class="add-button">
-                        <a href="event.html"><img style="width: 50px; height: 50px; padding: 0 10px 10px 0;" src="images/326501_add_circle_icon.svg" alt=""></a>
-                    </button>
-                </div>
-            </div>
-        `;
-        
-        // Append the card to the cardsSection
-        cardsSection.appendChild(cardDiv);
-    }
-});
-
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('.scrollup').fadeIn();
+            } else {
+                $('.scrollup').fadeOut();
+            }
+        });
+        $('.scrollup').click(function () {
+            $("html, body").animate({
+                scrollTop: 0
+            }, 600);
+            return false;
+        });
+    });
+ 
 </script>
+    <title>Available Events</title>
 
 </head>
 
 
 
 <body>
+
  
     <header>
         <div  id="logo">
-           <a href="main.html"><img id="logoimg" src="images/logo.png" alt=""></a>
-           <label id="tbn" for="">Name</label>
+           <a href="main.html"><img id="logoimg" src="images/logo.png" alt="Logo"></a>
+           <h1 id="logo-name">Name</h1>
 
         </div>
         
-        <div id="pfp">
-           <a href="profile.html"><img id="pfpimg" src="images/pfp.png" alt=""> </a>
+        <div >
+           <a href="profile.html"><img id="pfp" src="images/pfp.png" alt="pfp"> </a>
         </div>
     </header>
-
 
 <main>
 
 <div class="search-section">
 
+    <h1>Available Events</h1>
     <div>
-        <form id="form">
-            <input type="search" id="query" name="q" placeholder="Search">
+        <form id="search-form" action="https://www.google.com/search" target="_blank">
+            <input type="search" id="search-input" name="q" placeholder="Search">
             <button>
              <svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg>
             </button>
@@ -88,15 +68,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     
 
-    <div class="card" id="cardID">
+    <div class="card">
 
         <div class="img-card">
-            <img src="images/card-img-placeholder.png" alt="">
+            <img id="event-img" src="images/card-img-placeholder.png" alt="Event Image">
 
         </div>
 
         <div class="title-card">
-            <h1>MAIN</h1>
+            <h1 id="event-name-card">MAIN</h1>
 
         </div>
 
@@ -109,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <div class="card-button">
             <button class="add-button">
-                <a href="event.html"><img style="width: 50px; height: 50px; padding: 0 10px 10px 0;" src="images/326501_add_circle_icon.svg" alt=""></a>
+                <a href="event.html"><img  src="images/326501_add_circle_icon.svg" alt=""></a>
             </button>
             </div>
         </div>
@@ -122,21 +102,23 @@ document.addEventListener('DOMContentLoaded', function() {
 </main>
 
 
+<footer>
+    <div class="footer-contact">
 
-
-
-
-    <footer>
-        <div>
-
-            <label id="contact" for="">contact us</label>
-            <a href="mailto:swe363.26.project@gmail.com"><img src="images/4550857_email_gmail_mail_sending_yahoo_icon.png" alt=""></a>
-            <a href=""><img src="images/insta_img.png" alt=""></a>
-            <a href=""><img src="images/4555883_connect_media_networking_people_social_icon.png" alt=""></a><br>
-            
-        </div>
+        <label id="contact" for="">contact us</label>
+        <a href="mailto:swe363.26.project@gmail.com"><img src="images/4550857_email_gmail_mail_sending_yahoo_icon.png" alt=""></a>
+        <a href=""><img src="images/insta_img.png" alt=""></a>
+        <a href=""><img src="images/4555883_connect_media_networking_people_social_icon.png" alt=""></a><br>
         
-    </footer>
+    </div>
+
+    <code>
+
+        <a href="#" class="scrollup">Scroll</a>
+    </code>
     
+</footer>
+
+
 </body>
 </html>
