@@ -54,4 +54,13 @@ input {
         border-radius: 20px;
         background-color: var(--color-search-bar) ;
     }
+
+    @media screen and (max-width: 700px) {
+        #create-button{
+          display: none;
+          visibility: hidden;
+        }
+        
+        
+        }
   }
