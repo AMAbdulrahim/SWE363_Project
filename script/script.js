@@ -13,7 +13,7 @@
         cardDiv.innerHTML = `
 
         <div class="img-card">
-            <img id="event-img" src="images/card-img-placeholder.png" alt="">
+            <img id="event-img" src="/images/card-img-placeholder.png" alt="">
 
         </div>
 
@@ -31,7 +31,7 @@
             </div>
             <div class="card-button">
             <button class="add-button">
-                <a href="event.html"><img  src="images/326501_add_circle_icon.svg" alt=""></a>
+                <a href="event.html"><img  src="/images/add_button.svg" alt=""></a>
             </button>
             </div>
         </div>
