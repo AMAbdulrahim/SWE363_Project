@@ -9,8 +9,65 @@
     <link rel="stylesheet" href="/style/card.css">
     <link rel="stylesheet" href="/style/HeaderFooter.css">
     <link rel="stylesheet" href="/style/searchBar.css">
-    <script type="text/javascript" src="/script/script.js"></script>
     <script src="/script/st.js"></script>  <!--for the scroll up button-->
+    <style>
+        @media screen and (max-width: 717px) {
+            
+           
+
+            .current-event-section{
+                height: 490px;
+                margin: 5px;
+                padding: 0px;
+            }
+
+            #create-event-card{
+                width: 0;
+                visibility: hidden;
+            }
+
+            .current-event-section,.previous-event-section{
+
+                margin: 10;
+            }
+
+
+            .card{
+                width: auto;
+                height: 450px;
+
+            }
+            #event-img{
+                height: 200;
+                width: auto;
+            }
+            #event-name-card{
+                font-size: 40px;
+            }
+            .headers{
+                font-size: 30px;
+                padding-top: 20px;
+            }
+            .des h5{
+                font-size: 15px;
+            }
+            div.des{
+                height: 90px;
+            }
+            .card-button img{
+                width: 80px;
+
+            }
+            .card:hover{
+                transform: scale(1);
+                border: 3px solid black;
+            }
+
+
+        }
+
+    </style>
+    
 </head>
 <body>
 
@@ -31,7 +88,7 @@
 
 
 
-        <div class="search-section" style="flex-direction: row;">
+        <div class="search-section" style="flex-direction: row;" >
 
            
             <div>
@@ -46,14 +103,15 @@
                     </button>
                     
                 </form>
+                <div class="create-button" id="create-button-under"><button>Create</button></div>
+
+                
             </div>
-            <div id="create-button">
-                <button>
-                   Create
-                </button>
-            </div>
+            <div class="create-button" id="create-button-inline"><button>Create</button></div>
+            
         </div>
-        <h1>Current Events</h1>
+        
+        <h1 class="headers">Current Events</h1>
         <div class="current-event-section" >
         
             
@@ -418,7 +476,7 @@
 
 
 
-        <h1>Previous Events</h1>
+        <h1 class="headers">Previous Events</h1>
         <div class="previous-event-section" >
         
             

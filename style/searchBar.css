@@ -7,6 +7,8 @@ input {
     all: unset;
 }
 
+
+
 #search-input{
     color: black;
     font-size: 30px;
@@ -31,6 +33,8 @@ input {
 
 }
 
+
+
 .search-section button{
   all: unset;
   cursor: pointer;
@@ -41,6 +45,13 @@ input {
 .search-section button:hover{
   transform: scale(1.15);
 }
+
+#create-button-under{
+    display: none;
+  }
+  #create-button-inline{
+    visibility: visible;
+  }
 
 
 
@@ -54,13 +65,22 @@ input {
         border-radius: 20px;
         background-color: var(--color-search-bar) ;
     }
+    
+     .search-section{
+        
+               
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+    } 
 
-    @media screen and (max-width: 700px) {
-        #create-button{
-          display: none;
-          visibility: hidden;
-        }
-        
-        
-        }
+    #create-button-under{
+        display: flex;
+    }
+    #create-button-inline{
+        display: none;
+    }
+    
   }
+
