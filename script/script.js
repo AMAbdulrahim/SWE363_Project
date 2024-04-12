@@ -1,7 +1,7 @@
    // Wait for the DOM content to be loaded
    document.addEventListener('DOMContentLoaded', function() {
     // Select the #cardsSection element
-    var cardsSection = document.getElementById('cardsSection');
+    var cardsSection = document.getElementById('cardsSectionV');
     
     // Loop to create and add #cardID five times
     for (var i = 0; i < 10; i++) {
@@ -42,8 +42,3 @@
         cardsSection.appendChild(cardDiv);
     }
 });
-
-
-
-
-

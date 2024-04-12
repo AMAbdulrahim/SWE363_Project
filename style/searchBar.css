@@ -34,7 +34,8 @@ input {
 .search-section button{
   all: unset;
   cursor: pointer;
-  width: 44px;
+  width: 50px;
+  margin: 5px;
 }
 
 .search-section button:hover{
