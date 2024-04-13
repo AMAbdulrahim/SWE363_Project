@@ -150,7 +150,9 @@ main>h1{
 }
 
 
-
+a{
+  text-decoration: none;
+}
 
 
 
@@ -174,6 +176,11 @@ width: fit-content;
   justify-content: center;
   
  
+
+}
+
+#create-button-inline button:hover,#create-button-under button:hover{
+  transform: scale(1);
 
 }
 
