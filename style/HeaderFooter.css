@@ -6,6 +6,8 @@
     min-width: 360px;
     --color-shaddow: #00000040;
     --color-header-footer: #0B545F;
+    --color-card: #31A57A;
+    --color-card-hover:#238e66;
     --color-backgroung: #FDFFFC;
     font-weight: 700;
     font-family:Arial, Helvetica, sans-serif;
@@ -68,6 +70,10 @@ footer{
     border: 3px solid black;
     border-radius: 50%;
     
+}
+#pfp:hover{
+    border: solid 4px var(--color-card-hover);
+
 }
 
 #logoimg:hover, #pfp:hover {
