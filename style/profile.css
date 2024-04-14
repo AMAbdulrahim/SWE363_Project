@@ -27,20 +27,20 @@ footer{
     
 }
 
+
+
 .profile-info, .profile-event-info{
     height: inherit;
     padding: 20px;
-    margin: 20px 0px;
-    overflow: scroll;
-    scrollbar-width: none;
 
+    display: flex;
+    flex-direction: column;
 
 }
 
 .profile-info{
     grid-area: 'profile-info';
-    display: flex;
-    flex-direction: column;
+    
     align-items: center;
     justify-content: start;
     gap: 16px;
@@ -51,21 +51,25 @@ footer{
 }
 
 .profile-event-info{
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    grid-template-columns: auto;
-    scrollbar-width: none;
-    align-items:start;
+    align-items:center;
     gap: 10px;
     width: max-content;
-    scrollbar-width: none;
     padding-bottom: 80px;
-
-
-
+}
+.card-holder{
+    display: flex;
+    flex-direction: column;
+    scrollbar-width: none;
+    overflow: scroll;
+    padding: 30px;
+    gap: 10px;
+   
 
 }
+
+
+
 .profile-event-info .cards{
     margin-bottom: 80px;
 }
@@ -163,8 +167,9 @@ footer{
     font-weight: 700;
     letter-spacing: 0.05em;
     margin: 10px;
-    padding-top: 20px;
+    padding: 5px;
     height: fit-content;
+    
 }
 
 

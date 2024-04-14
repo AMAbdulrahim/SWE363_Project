@@ -145,7 +145,10 @@ footer a:hover{
     
     
 }
+#header-events:hover, #header-activity:hover, #header-settings:hover{
+    transform: scale(1.1);
 
+}
 
 
 #header-events{
@@ -175,6 +178,26 @@ footer a:hover{
 #logo-name{
     font-size: 50px;
 }
+
+
+
+select {
+
+    background-color:#1391A4 ;
+    color: white;
+    border-radius: 5%;
+    border: none;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    text-align: center;
+    
+
+  }
+
 
 @media screen and (max-width: 400px)  {
     .header-bar-buttons{
@@ -220,13 +243,5 @@ footer a:hover{
     }
   }
   
-/* Medium Devices (tablets and small laptops) */
-@media screen and (max-width: 900px)  {
-  
-}
 
-/* Large Devices (large desktops) */
-@media screen and (min-width: 1201px) {
- 
-}
   

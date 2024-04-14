@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="/style/VAE.css">
     <link rel="stylesheet" href="/style/HeaderFooter.css">
     <link rel="stylesheet" href="/style/profile.css">
+    <script src="/script/addCards_profile.js"></script>
+    <script src="/script/pageChange.js"></script>
 
     <script src="/script/st.js"></script>  <!--for the scroll up button-->
 <script>
@@ -95,11 +97,6 @@
 <body>
 
     <header>
-        <!-- <div  id="logo">
-           <a href="main.html"><img id="logoimg" src="/images/logo.png" alt="Logo"></a>
-          
-
-        </div> -->
         
         <div style="display:flex">
            <a href="profile.html"><img id="pfp" src="/images/pfp.png" alt="pfp"> </a>
@@ -108,22 +105,14 @@
 
         <div class="header-bar">
 
-          <div  >
-
-                <a href=""><button id="header-events" class="header-bar-buttons">Events</button></a>
-
-
+          <div>
+                <a href="/structure/ViewAvailableEvents.html"><button id="header-events" class="header-bar-buttons">Events</button></a>
           </div>
-          <div  >
-
-                <a href=""><button id="header-activity" class="header-bar-buttons">Activity</button></a>
-
-
+          <div>
+                <a href="/structure/activity.html"><button id="header-activity" class="header-bar-buttons">Activity</button></a>
           </div>
-          <div  > 
-            
-                <a href=""><button id="header-settings" class="header-bar-buttons">Settings</button></a>
-        
+          <div> 
+                <a href="/structure/settings.html"><button id="header-settings" class="header-bar-buttons">Settings</button></a>
         </div>
 
 
@@ -132,12 +121,11 @@
 
         </div>
 
-        <div class="header-select">
-            <select class="header-select-buttons" >
-                <option>Events</option>
-                <option>Activity</option>
-                <option>Settings</option>
-               
+        <div class="header-select" >
+            <select class="header-select-buttons" id="changePageSelect" onchange="redirectToPage()">
+                    <option value="/structure/ViewAvailableEvents.html">Events</option>
+                    <option value="/structure/activity.html">Activity</option>
+                    <option value="/structure/settings.html">Settings</option>
               </select>
 
         </div>
@@ -176,100 +164,35 @@
 
         <div class="profile-event-info">
 
-            <h1 >My Events:</h1>
-
-            <div class="card">
-
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
+           
+                <h1 >My Events:</h1>
+           
+<div class="card-holder">
+    
+                <div class="card">
+    
+                    <div class="img-card">
+                        <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
+    
+                    </div>
+    
+                    <div class="des">
+                     <h1 id="event-name-card">first one</h1>
+                     <h5 id="event-des">Description about the event Description about the event Description about the event Description about the event</h5>
+    
+                     </div>
+    
+                    <div class="card-des">
+                         <h5 id="event-date">31/12/2024</h5>
+                         <h5 id="event-time">3:30 pm</h5>
+    
+    
+                    </div>
+    
                 </div>
-        
-                <div class="des">
-                 <h1 id="event-name-card">MAIN</h1>
-                 <h5 id="event-des">Description about the event Description about the event Description about the event Description about the event</h5>
-
-                 </div>
-
-                <div class="card-des">
-                     <h5 id="event-date">31/12/2024</h5>
-                     <h5 id="event-time">3:30 pm</h5>
-        
-                    
-                </div>
-                
-            </div>
-            <div class="card">
-
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="des">
-                 <h1 id="event-name-card">MAIN</h1>
-                 <h5 id="event-des">Description about the event Description about the event Description about the event Description about the event</h5>
-
-                 </div>
-
-                <div class="card-des">
-                     <h5 id="event-date">31/12/2024</h5>
-                     <h5 id="event-time">3:30 pm</h5>
-        
-                    
-                </div>
-                
-            </div>
-
-            <div class="card">
-
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="des">
-                 <h1 id="event-name-card">MAIN</h1>
-                 <h5 id="event-des">Description about the event Description about the event Description about the event Description about the event</h5>
-
-                 </div>
-
-                <div class="card-des">
-                     <h5 id="event-date">31/12/2024</h5>
-                     <h5 id="event-time">3:30 pm</h5>
-        
-                    
-                </div>
-                
-            </div>
-            <div class="card">
-
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="des">
-                 <h1 id="event-name-card">MAIN</h1>
-                 <h5 id="event-des">Description about the event Description about the event Description about the event Description about the event</h5>
-
-                 </div>
-
-                <div class="card-des">
-                     <h5 id="event-date">31/12/2024</h5>
-                     <h5 id="event-time">3:30 pm</h5>
-        
-                    
-                </div>
-                
-            </div>
-            
-
-
-
-
-
-            
+    
+</div>
+     
         </div>
 
     </main>
