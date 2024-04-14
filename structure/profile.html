@@ -95,15 +95,53 @@
 <body>
 
     <header>
-        <div  id="logo">
+        <!-- <div  id="logo">
            <a href="main.html"><img id="logoimg" src="/images/logo.png" alt="Logo"></a>
-           <h1 id="logo-name">Name</h1>
+          
+
+        </div> -->
+        
+        <div style="display:flex">
+           <a href="profile.html"><img id="pfp" src="/images/pfp.png" alt="pfp"> </a>
+           <h1  id="logo-name">hi, <span id="header-fname">Fname</span></h1>
+        </div>
+
+        <div class="header-bar">
+
+          <div  >
+
+                <a href=""><button id="header-events" class="header-bar-buttons">Events</button></a>
+
+
+          </div>
+          <div  >
+
+                <a href=""><button id="header-activity" class="header-bar-buttons">Activity</button></a>
+
+
+          </div>
+          <div  > 
+            
+                <a href=""><button id="header-settings" class="header-bar-buttons">Settings</button></a>
+        
+        </div>
+
+
+
+
 
         </div>
-        
-        <div >
-           <a href="profile.html"><img id="pfp" src="/images/pfp.png" alt="pfp"> </a>
+
+        <div class="header-select">
+            <select class="header-select-buttons" >
+                <option>Events</option>
+                <option>Activity</option>
+                <option>Settings</option>
+               
+              </select>
+
         </div>
+
     </header>
 
     <main>
