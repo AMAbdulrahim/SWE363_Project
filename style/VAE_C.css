@@ -7,12 +7,12 @@
     --color-search-bar:#D9D9D9;
     font-family: Arial, Helvetica, sans-serif;
   }
-  *{
+*{
     margin: 0;
     padding: 0;
-  }
+}
 
-  main{
+main{
     background-color: var(--color-backgroung);
     display: grid;
     grid-template-areas: 'search-section' 
@@ -20,44 +20,40 @@
                          'previous-event';
   }
 
-  .search-section{
+.search-section{
     align-items: center;
-  }
+}
 
-  
-
-
-  .create-button{
+.create-button{
     margin: 0;
     padding: 0;
+    border-radius: 10px;
+
     width: 90px;
     height: fit-content;
     
-    border-radius: 10px ;
     background: var(--color-card);
+
     text-align: center;
-    
     color: white;
     font-size: 30px;
     font-weight: 700;
     line-height: 36.31px;
     box-shadow: 0px 4px 4px 0px var(--color-shaddow);
-    
-    
-  }
+}
 
-  .create-button:hover{
+.create-button:hover{
     transform: scale(1.05);
     background-color: var(--color-card-hover);
-  }
+}
   
-  .create-button button{
+.create-button button{
     width: 900;
     margin: 0;
-  }
-  .create-button button:hover{
+}
+.create-button button:hover{
     transform: scale(1);
-  }
+}
   
 
 .current-event-section{
@@ -105,10 +101,6 @@ main>h1{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  justify-items: center;
-  align-content: center;
-  align-self: center;
-  justify-self: center;
   align-items: center;
   text-align: center;
 
@@ -150,7 +142,9 @@ main>h1{
 }
 
 
-
+a{
+  text-decoration: none;
+}
 
 
 
@@ -174,6 +168,11 @@ width: fit-content;
   justify-content: center;
   
  
+
+}
+
+#create-button-inline button:hover,#create-button-under button:hover{
+  transform: scale(1);
 
 }
 

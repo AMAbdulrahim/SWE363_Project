@@ -4,12 +4,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>creator events</title>
     <link rel="stylesheet" href="/style/VAE_C.css">
-    <link rel="stylesheet" href="/style/card.css">
     <link rel="stylesheet" href="/style/VAE.css">
     <link rel="stylesheet" href="/style/card.css">
     <link rel="stylesheet" href="/style/HeaderFooter.css">
     <link rel="stylesheet" href="/style/searchBar.css">
-    <script src="/script/st.js"></script>  <!--for the scroll up button-->
+    <script src="/script/addCards_curr.js"></script>
+    <script src="/script/addCards_prev.js"></script>
+
     <style>
         @media screen and (max-width: 717px) {
             
@@ -63,6 +64,10 @@
                 border: 3px solid black;
             }
 
+            #search-form{
+                height: 75px;
+              }
+
 
         }
 
@@ -85,9 +90,6 @@
 
     <main>
 
-
-
-
         <div class="search-section" style="flex-direction: row;" >
 
            
@@ -103,11 +105,15 @@
                     </button>
                     
                 </form>
-                <div class="create-button" id="create-button-under"><button>Create</button></div>
+                <a href="/structure/createEvent.html">
+                    <div class="create-button" id="create-button-under"><button >Create</button></div>
+                </a>
 
                 
             </div>
-            <div class="create-button" id="create-button-inline"><button>Create</button></div>
+            <a href="/structure/createEvent.html">
+                <div class="create-button" id="create-button-inline"><button>Create</button></div>
+            </a>
             
         </div>
         
@@ -116,12 +122,6 @@
         
             
             <div class="card" id="create-event-card">
-        
-              
-                
-        
-                
-                   
                     <div class="card-button">
                     <button class="add-button">
                         <a href="event.html"><img  src="/images/add_button.svg" alt=""></a>
@@ -137,7 +137,7 @@
 
 
             </div> 
-            <div class="card">
+             <div class="card">
         
                 <div class="img-card">
                     <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
@@ -145,7 +145,7 @@
                 </div>
         
                 <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
+                    <h1 id="event-name-card">first event</h1>
         
                 </div>
         
@@ -167,321 +167,17 @@
                     </div>
                 </div>
             </div>
-            <div class="card">
-        
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
-        
-                </div>
-        
-                <div class="des-card">
-                   <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-        
-                    </div>
-                    <div class="card-button">
-                    <button class="add-button">
-                        <a href="event.html"><img  src="/images/delete_button.svg" alt=""></a>
-                    </button>
-                    <button class="add-button">
-                        <a href="event.html"><img  src="/images/edit_button.svg" alt=""></a>
-                    </button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-        
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
-        
-                </div>
-        
-                <div class="des-card">
-                   <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-        
-                    </div>
-                    <div class="card-button">
-                    <button class="add-button">
-                        <a href="event.html"><img  src="/images/delete_button.svg" alt=""></a>
-                    </button>
-                    <button class="add-button">
-                        <a href="event.html"><img  src="/images/edit_button.svg" alt=""></a>
-                    </button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-        
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
-        
-                </div>
-        
-                <div class="des-card">
-                   <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-        
-                    </div>
-                    <div class="card-button">
-                    <button class="add-button">
-                        <a href="event.html"><img  src="/images/delete_button.svg" alt=""></a>
-                    </button>
-                    <button class="add-button">
-                        <a href="event.html"><img  src="/images/edit_button.svg" alt=""></a>
-                    </button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-        
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
-        
-                </div>
-        
-                <div class="des-card">
-                   <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-        
-                    </div>
-                    <div class="card-button">
-                    <button class="add-button">
-                        <a href="event.html"><img  src="/images/delete_button.svg" alt=""></a>
-                    </button>
-                    <button class="add-button">
-                        <a href="event.html"><img  src="/images/edit_button.svg" alt=""></a>
-                    </button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-        
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
-        
-                </div>
-        
-                <div class="des-card">
-                   <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-        
-                    </div>
-                    <div class="card-button">
-                    <button class="add-button">
-                        <a href="event.html"><img  src="/images/delete_button.svg" alt=""></a>
-                    </button>
-                    <button class="add-button">
-                        <a href="event.html"><img  src="/images/edit_button.svg" alt=""></a>
-                    </button>
-
-                    </div>
-                </div>
-            </div> 
-            <div class="card">
-        
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
-        
-                </div>
-        
-                <div class="des-card">
-                   <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-        
-                    </div>
-                    <div class="card-button">
-                    <button class="add-button">
-                        <a href="event.html"><img  src="/images/delete_button.svg" alt=""></a>
-                    </button>
-                    <button class="add-button">
-                        <a href="event.html"><img  src="/images/edit_button.svg" alt=""></a>
-                    </button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-        
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
-        
-                </div>
-        
-                <div class="des-card">
-                   <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-        
-                    </div>
-                    <div class="card-button">
-                    <button class="add-button">
-                        <a href="event.html"><img  src="/images/delete_button.svg" alt=""></a>
-                    </button>
-                    <button class="add-button">
-                        <a href="event.html"><img  src="/images/edit_button.svg" alt=""></a>
-                    </button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-        
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
-        
-                </div>
-        
-                <div class="des-card">
-                   <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-        
-                    </div>
-                    <div class="card-button">
-                    <button class="add-button">
-                        <a href="event.html"><img  src="/images/delete_button.svg" alt=""></a>
-                    </button>
-                    <button class="add-button">
-                        <a href="event.html"><img  src="/images/edit_button.svg" alt=""></a>
-                    </button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-        
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
-        
-                </div>
-        
-                <div class="des-card">
-                   <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-        
-                    </div>
-                    <div class="card-button">
-                    <button class="add-button">
-                        <a href="event.html"><img  src="/images/delete_button.svg" alt=""></a>
-                    </button>
-                    <button class="add-button">
-                        <a href="event.html"><img  src="/images/edit_button.svg" alt=""></a>
-                    </button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-        
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
-        
-                </div>
-        
-                <div class="des-card">
-                   <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-        
-                    </div>
-                    <div class="card-button">
-                    <button class="add-button">
-                        <a href="event.html"><img  src="/images/delete_button.svg" alt=""></a>
-                    </button>
-                    <button class="add-button">
-                        <a href="event.html"><img  src="/images/edit_button.svg" alt=""></a>
-                    </button>
-
-                    </div>
-                </div>
-            </div>
-
-            
+           
         
         
         </div>
-
-
-
 
         <h1 class="headers">Previous Events</h1>
         <div class="previous-event-section" >
         
             
                 
-            <div   class="card">
+             <div   class="card">
         
                 <div class="img-card">
                     <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
@@ -489,7 +185,7 @@
                 </div>
         
                 <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
+                    <h1 id="event-name-card">first in prev</h1>
         
                 </div>
         
@@ -503,344 +199,9 @@
                    
                 </div>
             </div> 
-            <div class="card">
-        
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
-        
-                </div>
-        
-                <div class="des-card">
-                   <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-        
-                    </div>
-                   
-                </div>
-            </div> 
-            <div class="card">
-        
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
-        
-                </div>
-        
-                <div class="des-card">
-                   <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-        
-                    </div>
-                   
-                </div>
-            </div> 
-            <div class="card">
-        
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
-        
-                </div>
-        
-                <div class="des-card">
-                   <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-        
-                    </div>
-                   
-                </div>
-            </div> 
-            <div class="card">
-        
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
-        
-                </div>
-        
-                <div class="des-card">
-                   <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-        
-                    </div>
-                   
-                </div>
-            </div> 
-            <div class="card">
-        
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
-        
-                </div>
-        
-                <div class="des-card">
-                   <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-        
-                    </div>
-                   
-                </div>
-            </div> 
-            <div class="card">
-        
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
-        
-                </div>
-        
-                <div class="des-card">
-                   <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-        
-                    </div>
-                   
-                </div>
-            </div> 
-            <div class="card">
-        
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
-        
-                </div>
-        
-                <div class="des-card">
-                   <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-        
-                    </div>
-                   
-                </div>
-            </div> 
-            <div class="card">
-        
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
-        
-                </div>
-        
-                <div class="des-card">
-                   <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-        
-                    </div>
-                   
-                </div>
-            </div> 
-            <div class="card">
-        
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
-        
-                </div>
-        
-                <div class="des-card">
-                   <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-        
-                    </div>
-                   
-                </div>
-            </div> 
-            <div class="card">
-        
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
-        
-                </div>
-        
-                <div class="des-card">
-                   <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-        
-                    </div>
-                   
-                </div>
-            </div> 
-            <div class="card">
-        
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
-        
-                </div>
-        
-                <div class="des-card">
-                   <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-        
-                    </div>
-                   
-                </div>
-            </div> 
-            <div class="card">
-        
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
-        
-                </div>
-        
-                <div class="des-card">
-                   <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-        
-                    </div>
-                   
-                </div>
-            </div> 
-            <div class="card">
-        
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
-        
-                </div>
-        
-                <div class="des-card">
-                   <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-        
-                    </div>
-                   
-                </div>
-            </div> 
-            <div class="card">
-        
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
-        
-                </div>
-        
-                <div class="des-card">
-                   <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-        
-                    </div>
-                   
-                </div>
-            </div> 
-            <div class="card">
-        
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-        
-                </div>
-        
-                <div class="title-card">
-                    <h1 id="event-name-card">MAIN</h1>
-        
-                </div>
-        
-                <div class="des-card">
-                   <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-        
-                    </div>
-                   
-                </div>
-            </div> 
-          
-        
-            
-        
-         
-        
-        
+           
         </div>
+
     </main>
 
 

@@ -1,0 +1,157 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/VAE.css">
+    <link rel="stylesheet" href="/style/HeaderFooter.css">
+    <link rel="stylesheet" href="/style/profile.css">
+    <script src="/script/addCards_profile.js"></script>
+    <script src="/script/pageChange.js"></script>
+
+    <script src="/script/st.js"></script>  <!--for the scroll up button-->
+<script>
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('.scrollup').fadeIn();
+            } else {
+                $('.scrollup').fadeOut();
+            }
+        });
+        $('.scrollup').click(function () {
+            $("html, body").animate({
+                scrollTop: 0
+            }, 600);
+            return false;
+        });
+    });
+ 
+</script>
+
+    <title>Profile</title>
+    
+    
+</head>
+<body>
+
+    <header>
+        
+        <div style="display:flex">
+           <a href="profile.html"><img id="pfp" src="/images/pfp.png" alt="pfp"> </a>
+           <h1  id="logo-name">hi, <span id="header-fname">Fname</span></h1>
+        </div>
+
+        <div class="header-bar">
+
+          <div>
+                <a href="/structure/ViewAvailableEvents.html"><button id="header-events" class="header-bar-buttons">Events</button></a>
+          </div>
+          <div>
+                <a href="/structure/activity.html"><button id="header-activity" class="header-bar-buttons">Activity</button></a>
+          </div>
+          <div> 
+                <a href="/structure/settings.html"><button id="header-settings" class="header-bar-buttons">Settings</button></a>
+        </div>
+
+
+
+
+
+        </div>
+
+        <div class="header-select" >
+            <select class="header-select-buttons" id="changePageSelect" onchange="redirectToPage()">
+                    <option value="/structure/ViewAvailableEvents.html">Events</option>
+                    <option value="/structure/activity.html">Activity</option>
+                    <option value="/structure/settings.html">Settings</option>
+              </select>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <div class="profile-info">
+
+            <div class="profile-img">
+
+                <img id="profileImg" src="/images/pfp.png" alt="">
+
+            </div>
+
+            <div class="profile-name">
+                <h2>Fname Lname</h2>
+            </div>
+
+            <div class="profile-email">
+                <h3 id="profileEmail">
+                    example@hotmail.com
+                </h3>
+
+            </div>
+
+            <div class="profile-hours">
+                <h3>Completed Hours: <span id="completedHours">00</span></h3>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="profile-event-info">
+
+           
+                <h1 >My Events:</h1>
+           
+<div class="card-holder">
+    
+                <div class="card">
+    
+                    <div class="img-card">
+                        <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
+    
+                    </div>
+    
+                    <div class="des">
+                     <h1 id="event-name-card">first one</h1>
+                     <h5 id="event-des">Description about the event Description about the event Description about the event Description about the event</h5>
+    
+                     </div>
+    
+                    <div class="card-des">
+                         <h5 id="event-date">31/12/2024</h5>
+                         <h5 id="event-time">3:30 pm</h5>
+    
+    
+                    </div>
+    
+                </div>
+    
+</div>
+     
+        </div>
+
+    </main>
+
+<footer>
+    <div class="footer-contact">
+
+        <label id="contact" for="">contact us</label>
+        <a href="mailto:swe363.26.project@gmail.com" target="_blank"><img src="/images/email_icon.png" ></a>
+        <a href="https://www.instagram.com/" target="_blank"><img src="/images/instagram_icon.png" ></a>
+        <a href="https://twitter.com/" target="_blank"><img src="/images/twitter_icon.png" ></a><br>
+        
+    </div>
+
+    <code>
+        <a href="#" class="scrollup">Scroll</a>
+    </code>
+    
+</footer> 
+
+
+    
+</body>
+</html>
