@@ -1,0 +1,88 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>creator events</title>
+    <link rel="stylesheet" href="/style/VAE_C.css">
+    <link rel="stylesheet" href="/style/card.css">
+    <link rel="stylesheet" href="/style/card.css">
+    <link rel="stylesheet" href="/style/HeaderFooter.css">
+    <link rel="stylesheet" href="/style/ECE.css">
+    <script src="/script/st.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div id="logo">
+            <a href="javascript:history.back()"><img id="logoimg" src="/images/back.png" alt="Logo"></a>
+            <h1 id="logo-name">Events</h1>
+
+        </div>
+    </header>
+
+    <main>
+
+        <div class="container">
+            <form action="/submit-event" method="post">
+                <div class="event-form">
+                    <label for="event-name">Event:</label>
+                    <input type="text" id="event-name" name="event_name" placeholder="Enter event's name">
+                </div>
+                <div class="event-form">
+                    <label for="location">Location:</label>
+                    <select id="location" name="location">
+                        <option value=""> Choose a location</option>
+                    
+                    </select>
+                </div>
+                <div class="event-form">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" placeholder="Enter a description for the event"></textarea>
+                </div>
+                <div class="event-form">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="example@hotmail.com">
+                </div>
+                <div class="event-form">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date">
+                </div>
+                <div class="event-form">
+                    <label for="time">Time:</label>
+                    <input type="time" id="time" name="time">
+                </div>
+                <div class="event-form">
+                    <label for="image">Image:</label>
+                    <input type="file" id="image" name="image">
+                </div>
+                <div class="buttons-form">
+                    <button type="submit">Apply</button>
+                    <button type="button">Cancle</button>
+                </div>
+            </form>
+        </div>
+
+    </main>
+    <footer>
+        <code>
+        <a href="#" class="scrollup">Scroll</a>
+    </code>
+
+        <div class="footer-contact">
+
+            <label id="contact" for="">contact us</label>
+            <a href="mailto:swe363.26.project@gmail.com" target="_blank"><img src="/images/email_icon.png"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="/images/instagram_icon.png"></a>
+            <a href="https://twitter.com/" target="_blank"><img src="/images/twitter_icon.png"></a><br>
+
+        </div>
+
+
+    </footer>
+</body>
