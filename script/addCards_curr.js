@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
                 </div>
                 <div class="title-card">
-                    <h1 id="event-name-card">EVENT NAME</h1>
+                    <h1 id="event-name-card">EVENT NAME ${i}</h1>
                 </div>
                 <div class="des-card">
                     <div class="des">
