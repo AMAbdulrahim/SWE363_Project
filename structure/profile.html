@@ -1,0 +1,258 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/VAE.css">
+    <link rel="stylesheet" href="/style/HeaderFooter.css">
+    <link rel="stylesheet" href="/style/profile.css">
+
+    <script src="/script/st.js"></script>  <!--for the scroll up button-->
+<script>
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('.scrollup').fadeIn();
+            } else {
+                $('.scrollup').fadeOut();
+            }
+        });
+        $('.scrollup').click(function () {
+            $("html, body").animate({
+                scrollTop: 0
+            }, 600);
+            return false;
+        });
+    });
+ 
+</script>
+
+<style>
+
+    @media screen and (max-width: 915px){
+        .profile-info{
+            min-width: 0px;  
+        }
+
+    }
+    @media screen and (max-width: 825px){
+        main{
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+            grid-template-areas: 'profile-info' 'profile-event-info';
+            grid-template-rows: 200px 100%;
+            overflow: scroll;
+
+        }
+        .profile-info{
+            height: fit-content;
+            align-items: center;
+            width: 100vw;
+        }
+        #profileImg{
+            display: none;
+        }
+        #event-des{
+            width: 200px;
+            height: auto;
+            font-size: 14px;
+        
+        }
+        .card{
+            width: 90vw;
+            min-width: 200px;
+        }  
+    
+    }
+    @media screen and (max-width: 540px){
+        .img-card{
+            display: none;
+        }
+        .card{
+            display: flex;
+            justify-content: space-around;
+            min-width: 200px;
+            margin: 5px;
+            padding: auto;
+        }
+        .profile-event-info>h1{
+            display: none;
+        }
+        .profile-event-info{
+            padding: 20px 0;
+            margin: 20px 0;
+        }
+
+    }
+
+</style>
+    
+    <title>Profile</title>
+    
+    
+</head>
+<body>
+
+    <header>
+        <div  id="logo">
+           <a href="main.html"><img id="logoimg" src="/images/logo.png" alt="Logo"></a>
+           <h1 id="logo-name">Name</h1>
+
+        </div>
+        
+        <div >
+           <a href="profile.html"><img id="pfp" src="/images/pfp.png" alt="pfp"> </a>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="profile-info">
+
+            <div class="profile-img">
+
+                <img id="profileImg" src="/images/pfp.png" alt="">
+
+            </div>
+
+            <div class="profile-name">
+                <h2>Fname Lname</h2>
+            </div>
+
+            <div class="profile-email">
+                <h3 id="profileEmail">
+                    example@hotmail.com
+                </h3>
+
+            </div>
+
+            <div class="profile-hours">
+                <h3>Completed Hours: <span id="completedHours">00</span></h3>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="profile-event-info">
+
+            <h1 >My Events:</h1>
+
+            <div class="card">
+
+                <div class="img-card">
+                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
+        
+                </div>
+        
+                <div class="des">
+                 <h1 id="event-name-card">MAIN</h1>
+                 <h5 id="event-des">Description about the event Description about the event Description about the event Description about the event</h5>
+
+                 </div>
+
+                <div class="card-des">
+                     <h5 id="event-date">31/12/2024</h5>
+                     <h5 id="event-time">3:30 pm</h5>
+        
+                    
+                </div>
+                
+            </div>
+            <div class="card">
+
+                <div class="img-card">
+                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
+        
+                </div>
+        
+                <div class="des">
+                 <h1 id="event-name-card">MAIN</h1>
+                 <h5 id="event-des">Description about the event Description about the event Description about the event Description about the event</h5>
+
+                 </div>
+
+                <div class="card-des">
+                     <h5 id="event-date">31/12/2024</h5>
+                     <h5 id="event-time">3:30 pm</h5>
+        
+                    
+                </div>
+                
+            </div>
+
+            <div class="card">
+
+                <div class="img-card">
+                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
+        
+                </div>
+        
+                <div class="des">
+                 <h1 id="event-name-card">MAIN</h1>
+                 <h5 id="event-des">Description about the event Description about the event Description about the event Description about the event</h5>
+
+                 </div>
+
+                <div class="card-des">
+                     <h5 id="event-date">31/12/2024</h5>
+                     <h5 id="event-time">3:30 pm</h5>
+        
+                    
+                </div>
+                
+            </div>
+            <div class="card">
+
+                <div class="img-card">
+                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
+        
+                </div>
+        
+                <div class="des">
+                 <h1 id="event-name-card">MAIN</h1>
+                 <h5 id="event-des">Description about the event Description about the event Description about the event Description about the event</h5>
+
+                 </div>
+
+                <div class="card-des">
+                     <h5 id="event-date">31/12/2024</h5>
+                     <h5 id="event-time">3:30 pm</h5>
+        
+                    
+                </div>
+                
+            </div>
+            
+
+
+
+
+
+            
+        </div>
+
+    </main>
+
+<footer>
+    <div class="footer-contact">
+
+        <label id="contact" for="">contact us</label>
+        <a href="mailto:swe363.26.project@gmail.com" target="_blank"><img src="/images/email_icon.png" ></a>
+        <a href="https://www.instagram.com/" target="_blank"><img src="/images/instagram_icon.png" ></a>
+        <a href="https://twitter.com/" target="_blank"><img src="/images/twitter_icon.png" ></a><br>
+        
+    </div>
+
+    <code>
+        <a href="#" class="scrollup">Scroll</a>
+    </code>
+    
+</footer> 
+
+
+    
+</body>
+</html>
