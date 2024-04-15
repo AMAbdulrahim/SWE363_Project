@@ -5,7 +5,11 @@
   --color-card: #31A57A;
   --color-card-hover:#238e66;
   --color-search-bar:#D9D9D9;
+  --color-search-section-font: #000000;
+
 }
+
+
 
 
 
@@ -22,7 +26,7 @@ main{
     grid-area: 'search-section';
     justify-content: center;
     align-items: center;  
-    color: black;
+    color: var(--color-search-section-font);
 }
 
 .search-section h1{
@@ -107,6 +111,7 @@ main{
     overflow: hidden;
     width: 280px;
 }
+
 
 
 

@@ -1,14 +1,18 @@
 main {
     font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
   }
   
   .container {
-    width: 90%;
+    width: max-content;
     margin: 0 auto;
     max-height: 500px; 
     display: flex;
     overflow: hidden;
     overflow-y: auto;
+    scrollbar-width: none;
+
   }
   
   .event-form {

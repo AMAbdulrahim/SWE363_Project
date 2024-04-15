@@ -7,28 +7,17 @@
     <link rel="stylesheet" href="/style/searchBar.css">
     <script type="text/javascript" src="/script/addCards_VAE.js"></script>
     <script src="/script/st.js"></script>  <!--for the scroll up button-->
+    <script src="/script/scrollUp.js"></script>
     <script src="/script/searching.js"></script>
-<script>
-    $(document).ready(function () {
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 100) {
-                $('.scrollup').fadeIn();
-            } else {
-                $('.scrollup').fadeOut();
-            }
-        });
-        $('.scrollup').click(function () {
-            $("html, body").animate({
-                scrollTop: 0
-            }, 600);
-            return false;
-        });
-    });
-</script>
+    <script src="/script/darkMode.js"></script>
     <title>Available Events</title>
 
 </head>
+<style>
 
+   
+      
+</style>
 
 
 <body>
@@ -38,8 +27,10 @@
         <div  id="logo">
            <a href="main.html"><img id="logoimg" src="/images/logo.png" alt="Logo"></a>
            <h1 id="logo-name">Name</h1>
-
         </div>
+
+        <img src="/images/moon.png" id="icon">
+
         <div >
            <a href="profile.html"><img id="pfp" src="/images/pfp.png" alt="pfp"> </a>
         </div>
@@ -51,15 +42,15 @@
 
     <h1>Available Events</h1>
     <div>
-        <form id="search-form" action="https://www.google.com/search" target="_blank">
+        <form id="search-form" >
             <input type="search" id="search-input" name="q" placeholder="Search">
-            <button>
+            <button id="search-button">
                 <svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg>
                </button>
 
-               <button>
+               <!-- <button>
                    <img src="/images/filter_button.svg" alt=""> 
-               </button>
+               </button> -->
         </form>
     </div>
 </div>
@@ -119,7 +110,9 @@
     </code>
     
 </footer>
+<script>
 
+</script>
 
 </body>
 </html>

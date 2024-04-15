@@ -1,8 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
     const eventCards = document.querySelectorAll('.card');
 
-    searchInput.addEventListener('input', function () {
+    searchButton.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent form submission
+        
         const searchTerm = searchInput.value.trim().toLowerCase();
 
         eventCards.forEach(function (card) {

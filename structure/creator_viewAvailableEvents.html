@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/style/card.css">
     <link rel="stylesheet" href="/style/HeaderFooter.css">
     <link rel="stylesheet" href="/style/searchBar.css">
+    <script src="/script/darkMode.js"></script>
     <script src="/script/addCards_curr.js"></script>
     <script src="/script/addCards_prev.js"></script>
 
@@ -77,15 +78,18 @@
 <body>
 
     <header>
-        <div  id="logo">
-           <a href="main.html"><img id="logoimg" src="/images/logo.png" alt="Logo"></a>
-           <h1 id="logo-name">Name</h1>
-
-        </div>
-        
-        <div >
-           <a href="profile.html"><img id="pfp" src="/images/pfp.png" alt="pfp"> </a>
-        </div>
+        <header>
+            <div  id="logo">
+               <a href="main.html"><img id="logoimg" src="/images/logo.png" alt="Logo"></a>
+               <h1 id="logo-name">Name</h1>
+            </div>
+    
+            <img src="/images/moon.png" id="icon">
+    
+            <div >
+               <a href="profile.html"><img id="pfp" src="/images/pfp.png" alt="pfp"> </a>
+            </div>
+        </header>
     </header>
 
     <main>
@@ -124,7 +128,7 @@
             <div class="card" id="create-event-card">
                     <div class="card-button">
                     <button class="add-button">
-                        <a href="event.html"><img  src="/images/add_button.svg" alt=""></a>
+                        <a href="/structure/editCreateEvent.html"><img  src="/images/add_button.svg" alt=""></a>
                     </button>
                 
                     </div>
@@ -161,7 +165,7 @@
                         <a href="event.html"><img  src="/images/delete_button.svg" alt=""></a>
                     </button>
                     <button class="add-button">
-                        <a href="event.html"><img  src="/images/edit_button.svg" alt=""></a>
+                        <a href="editCreateEvent.html"><img  src="/images/edit_button.svg" alt=""></a>
                     </button>
 
                     </div>

@@ -12,8 +12,12 @@
     font-weight: 700;
     font-family:Arial, Helvetica, sans-serif;
     color: white;
+    
 
 
+}
+body{
+    background-color: var(--color-backgroung);
 }
 
 * {
@@ -197,6 +201,23 @@ select {
     
 
   }
+
+  .dark-theme{
+    --color-shaddow: #00000040;
+    --color-header-footer: #0B545F;
+    --color-backgroung: #121212;
+    --color-card: #575757;
+    --color-card-hover:#7b7272;
+    --color-search-bar:#7b7272;
+    --color-search-section-font: #FDFFFC;
+  
+  }
+  #icon{
+    width: 30px;
+    cursor: pointer;
+    margin-left: auto;
+  }
+  
 
 
 @media screen and (max-width: 400px)  {
