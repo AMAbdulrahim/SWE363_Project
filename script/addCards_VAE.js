@@ -1,3 +1,30 @@
+   
+   
+   let cities = [
+    "New York",
+    "London",
+    "Paris",
+    "Tokyo",
+    "Sydney",
+    "Dubai",
+    "Rome",
+    "Berlin",
+    "Moscow",
+    "Beijing",
+    "Los Angeles",
+    "Toronto",
+    "Mumbai",
+    "Rio de Janeiro",
+    "Cairo",
+    "Seoul",
+    "Mexico City",
+    "Singapore",
+    "Bangkok",
+    "Istanbul"
+  ];
+  
+//   console.log(cities);
+  
    // Wait for the DOM content to be loaded
    document.addEventListener('DOMContentLoaded', function() {
     // Select the #cardsSection element
@@ -18,7 +45,7 @@
         </div>
 
         <div class="title-card">
-            <h1 id="event-name-card">MAIN</h1>
+            <h1 id="event-name-card">${cities[i]}</h1>
 
         </div>
 
