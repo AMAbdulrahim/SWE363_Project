@@ -5,47 +5,61 @@
     scrollbar-width: none;
     min-width: 360px;
     --color-search-section-font: #000000;
-    --color-profile-info:#E9E3E3;
-    --color-search-bar:#D9D9D9;
+    --color-profile-info: #E9E3E3;
+    --color-search-bar: #D9D9D9;
     --color-black-text: #000;
     --color-black-border: #000;
     --color-white-text: #fff;
     --color-shaddow: #00000040;
     --color-header-footer: #0B545F;
     --color-card: #31A57A;
-    --color-card-hover:#238e66;
+    --color-card-hover: #238e66;
     --color-backgroung: #FDFFFC;
-    --color-event-name:#333;
-    --color-event-des:#666;
+    --color-event-name: #333;
+    --color-event-des: #666;
     --color-event-form-text: #210124;
-    --color-event-from-border:#ccc;
+    --color-event-from-border: #ccc;
     --color-header-events: #0E6876;
     --color-header-activity: #107C8D;
     --color-header-settings: #1391A4;
 
     font-weight: 700;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     color: var(--color-white-text);
-    
+
 
 
 }
 
-.dark-theme{
-    --color-shaddow: #00000040;
-    --color-header-footer: #0B545F;
-    --color-backgroung: #121212;
-    --color-card: #575757;
-    --color-card-hover:#7b7272;
-    --color-search-bar:#7b7272;
-    --color-search-section-font: #FDFFFC;
-    
-  
+.dark-theme {
+
+    --color-black-text: #ffffffd5;
+    --color-black-border: #E9E3E3;
+    --color-backgroung: #121212cd;
+    --color-white-text: #0000004d;
+    --color-card: #7777776a;
+    --color-search-bar: #D9D9D9;
+    --color-card-hover: #cccccc91;
+    --color-search-section-font: #ffffffe7;
+    --color-shaddow: #0000005a;
+    --color-profile-info: #e9e3e32e;
+    --color-header-footer: #12121275;
+    --color-header-events: #888;
+    --color-header-activity: #888;
+    --color-header-settings: #888;
+    --color-event-name: #ffffffe7;
+    --color-event-from-border: #cccccc6c;
+    --color-event-form-text: #0000004d;
+    --color-event-des: #ffffff38;
+
+
+
+
 }
 
 
 
-body{
+body {
     background-color: var(--color-backgroung);
 }
 
@@ -53,51 +67,54 @@ body{
     margin: 0;
     padding: 0;
 }
-main{
+
+main {
     background-color: var(--color-backgroung);
 }
 
-header,footer {
-    display: flex; 
-    align-items: center; 
-    background-color: var(--color-header-footer) ; 
-    width: 95vw; 
-   
-    padding: 0px 40px; 
+header,
+footer {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-header-footer);
+    width: 95vw;
+
+    padding: 0px 40px;
     box-shadow: 0px 4px 40px 0px var(--color-shaddow);
 }
 
-header{
-    height: 100px; 
-    justify-content: space-between; 
+header {
+    height: 100px;
+    justify-content: space-between;
 
 }
 
-footer{
+footer {
     height: 21vw;
     max-height: 200px;
     justify-content: center;
     align-content: center;
     margin-top: 40px;
-    
-}
-    
-#logo {
-    display: flex;
-   
-    
+
 }
 
-#logo-name{
+#logo {
+    display: flex;
+
+
+}
+
+#logo-name {
     display: flex;
     align-items: center;
     text-shadow: 0px 4px 4px var(--color-shaddow);
-    
+
     font-size: 2.3vw;
     font-weight: 700;
 
 }
-#logoimg{
+
+#logoimg {
     height: 100px;
     width: 100px;
 }
@@ -105,37 +122,39 @@ footer{
 #pfp {
     height: 80px;
     width: 80px;
-    margin: 0px 10px ;
+    margin: 0px 10px;
     border: 3px solid var(--color-black-border);
     border-radius: 50%;
-    
+
 }
-#pfp:hover{
+
+#pfp:hover {
     border: solid 4px var(--color-card-hover);
 
 }
 
-#logoimg:hover, #pfp:hover {
+#logoimg:hover,
+#pfp:hover {
     transform: scale(1.05);
-    
+
 }
 
 
-.footer-contact{
+.footer-contact {
     display: flex;
     gap: 10px;
 
 }
 
-footer a:hover{
+footer a:hover {
     transform: scale(1.15);
 }
 
-#contact{
+#contact {
     display: flex;
     align-items: center;
     text-shadow: 0px 4px 4px var(--color-shaddow);
-   
+
     font-weight: 700;
     font-size: 30px;
 
@@ -152,63 +171,69 @@ footer a:hover{
     display: none;
     text-indent: -9999px;
     background: url('/images/top_up.png') no-repeat;
-   }
+}
 
 
 
 
 
 
-.header-bar{
+.header-bar {
     display: flex;
     width: 60vw;
     height: 80%;
 
 }
 
-.header-bar-buttons{
+.header-bar-buttons {
     width: 20vw;
     height: 100%;
     cursor: pointer;
 
     font-weight: 700;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     color: var(--color-white-text);
     font-size: 2.3vw;
-    
-    
+
+
 }
-#header-events:hover, #header-activity:hover, #header-settings:hover{
+
+#header-events:hover,
+#header-activity:hover,
+#header-settings:hover {
     transform: scale(1.1);
 
 }
 
 
-#header-events{
+#header-events {
     background-color: var(--color-header-events);
 
 }
-#header-activity{
 
-    background-color:var(--color-header-activity) ;
+#header-activity {
+
+    background-color: var(--color-header-activity);
 }
-#header-settings{
+
+#header-settings {
     background-color: var(--color-header-settings);
 
 }
 
 
-.header-select{
+.header-select {
     display: none;
     width: 80vw;
     height: 60%;
 }
-.header-bar-buttons{
+
+.header-bar-buttons {
     visibility: visible;
     border: none;
 }
 
-#logo-name{
+#logo-name {
     font-size: 50px;
 }
 
@@ -216,7 +241,7 @@ footer a:hover{
 
 select {
 
-    background-color:var(--color-header-settings) ;
+    background-color: var(--color-header-settings);
     color: var(--color-white-text);
     border-radius: 5%;
     border: none;
@@ -227,62 +252,66 @@ select {
     cursor: inherit;
     line-height: inherit;
     text-align: center;
-    
 
-  }
 
-  
-  #icon{
+}
+
+
+#icon {
     width: 30px;
     cursor: pointer;
     margin-left: auto;
-  }
-  
+}
 
 
-@media screen and (max-width: 400px)  {
-    .header-bar-buttons{
+
+@media screen and (max-width: 400px) {
+    .header-bar-buttons {
         display: none;
         visibility: hidden;
     }
-    .header-select{
-        display:flex;
+
+    .header-select {
+        display: flex;
     }
 
 
-   
-  }
+
+}
 
 
 /* Small Devices (phones) */
 @media screen and (max-width: 600px) {
-    #pfp, #logoimg{
+
+    #pfp,
+    #logoimg {
         width: 100;
         height: 100;
         padding: 0;
     }
-    #logo-name{
+
+    #logo-name {
         font-size: 35px;
     }
-    header{
+
+    header {
         height: 120px;
     }
-    #contact{
+
+    #contact {
         font-size: 25px;
     }
-    footer img{
-        width:40 ;
-        height:40 ;
-    }
-   
-  }
 
-  @media screen and (max-width: 700px)  {
-    #logo-name{
+    footer img {
+        width: 40;
+        height: 40;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+    #logo-name {
         display: none;
-    
-    }
-  }
-  
 
-  
+    }
+}

@@ -1,90 +1,90 @@
-:root{
-    --color-search-section-font: #000000;
-    --color-profile-info:#E9E3E3;
-    --color-search-bar:#D9D9D9;
-    --color-black-text: #000;
-    --color-black-border: #000;
-    --color-white-text: #fff;
-    --color-shaddow: #00000040;
-    --color-header-footer: #0B545F;
-    --color-card: #31A57A;
-    --color-card-hover:#238e66;
-    --color-backgroung: #FDFFFC;
-    --color-event-name:#333;
-    --color-event-des:#666;
-    --color-event-form-text: #210124;
-    --color-event-from-border:#ccc;
+:root {
+  --color-search-section-font: #000000;
+  --color-profile-info: #E9E3E3;
+  --color-search-bar: #D9D9D9;
+  --color-black-text: #000;
+  --color-black-border: #000;
+  --color-white-text: #fff;
+  --color-shaddow: #00000040;
+  --color-header-footer: #0B545F;
+  --color-card: #31A57A;
+  --color-card-hover: #238e66;
+  --color-backgroung: #FDFFFC;
+  --color-event-name: #333;
+  --color-event-des: #666;
+  --color-event-form-text: #210124;
+  --color-event-from-border: #ccc;
 
 }
 
 main {
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    align-items: center;
-  }
-  
-  .container {
-    width: max-content;
-    margin: 0 auto;
-    max-height: fit-content; 
-    display: flex;
-    overflow: hidden;
-    overflow-y: auto;
-    scrollbar-width: none;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  align-items: center;
+}
 
-  }
-  
-  .event-form {
-    margin-bottom: 20px;
-    width: 700px;
-  }
-  
-  .event-form label {
-    flex: 0 0 200px; 
-    color: var(--color-event-form-text);
-    display: block;
-    margin-bottom: 5px;
-    margin-top: 5px;
-  }
-  
-  .event-form input[type="text"],
-  .event-form input[type="email"],
-  .event-form input[type="date"],
-  .event-form input[type="time"],
-  .event-form select,
-  .event-form textarea {
-    flex: 1;
-    background-color: var(--color-search-bar);
-    width: 100%;
-    padding: 10px;
-    border: 1px solid var(--color-event-from-border);
-    border-radius: 4px;
-  }
-  
-  .event-form textarea {
-    height: 100px;
-    resize: none;
-  }
-  
-  .buttons-form button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .buttons-form button[type="submit"] {
-    background-color: var(--color-card);
-    color: var(--color-white-text);
-  }
-  
-  .buttons-form button[type="button"] {
-    background-color: var(--color-search-bar);
-    color: var(--color-event-form-text);
-    margin-left: 10px;
-    margin-bottom: 10px;
-  }
+.container {
+  width: max-content;
+  margin: 0 auto;
+  max-height: fit-content;
+  display: flex;
+  overflow: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
 
-  select{
-    color: var(--color-black-text);
-  } 
+}
+
+.event-form {
+  margin-bottom: 20px;
+  width: 700px;
+}
+
+.event-form label {
+  flex: 0 0 200px;
+  color: var(--color-event-form-text);
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.event-form input[type="text"],
+.event-form input[type="email"],
+.event-form input[type="date"],
+.event-form input[type="time"],
+.event-form select,
+.event-form textarea {
+  flex: 1;
+  background-color: var(--color-search-bar);
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--color-event-from-border);
+  border-radius: 4px;
+}
+
+.event-form textarea {
+  height: 100px;
+  resize: none;
+}
+
+.buttons-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.buttons-form button[type="submit"] {
+  background-color: var(--color-card);
+  color: var(--color-white-text);
+}
+
+.buttons-form button[type="button"] {
+  background-color: var(--color-search-bar);
+  color: var(--color-event-form-text);
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+select {
+  color: var(--color-black-text);
+}
