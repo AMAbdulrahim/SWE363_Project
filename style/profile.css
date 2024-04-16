@@ -172,6 +172,12 @@ footer{
     
 }
 
+#completedHours:hover{
+    color: red;
+    border-bottom: solid 2px black;
+    
+}
+
 
 @media screen and (max-width: 915px){
     .profile-info{
