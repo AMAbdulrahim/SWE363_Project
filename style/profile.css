@@ -190,6 +190,24 @@ footer {
 }
 
 
+.card-holder{
+    scrollbar-width: auto;
+}
+
+.card-holder::-webkit-scrollbar {
+    width: 20px;               /* width of the entire scrollbar */
+  }
+  .card-holder::-webkit-scrollbar-track {
+    background: inherit;        /* color of the tracking area */
+  }
+  .card-holder::-webkit-scrollbar-thumb {
+    background-color: var(--color-header-footer);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid var(--color-card);  /* creates padding around scroll thumb */
+}
+
+
+
 @media screen and (max-width: 915px) {
     .profile-info {
         min-width: 0px;
@@ -230,9 +248,7 @@ footer {
         width: 90vw;
         min-width: 200px;
     }
-
 }
-
 @media screen and (max-width: 540px) {
     .img-card {
         display: none;
