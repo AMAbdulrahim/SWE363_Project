@@ -1,4 +1,21 @@
+:root{
+    --color-search-section-font: #000000;
+    --color-profile-info:#E9E3E3;
+    --color-search-bar:#D9D9D9;
+    --color-black-text: #000;
+    --color-black-border: #000;
+    --color-white-text: #fff;
+    --color-shaddow: #00000040;
+    --color-header-footer: #0B545F;
+    --color-card: #31A57A;
+    --color-card-hover:#238e66;
+    --color-backgroung: #FDFFFC;
+    --color-event-name:#333;
+    --color-event-des:#666;
 
+
+
+}
 
 body {
     font-family: 'Arial', sans-serif;
@@ -31,7 +48,7 @@ body {
 .event-name {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 36px;
-    color: #333;
+    color: var(--color-event-name);
     margin-top: 40px;
     margin-bottom: 10px;
     margin-left: 40px;
@@ -39,7 +56,7 @@ body {
 }
 .Description{
     font-size: 22px;
-    color: #333;
+    color: var(--color-event-name);
     margin-bottom: 5px;
     margin-left: 10px;
     margin-left: 40px;
@@ -47,7 +64,7 @@ body {
 }
 .event-description {
     font-size: 18px;
-    color: #666;
+    color: var(--color-event-des);
     margin-bottom: 20px;
     margin-right: 20px;
     max-height: 100px; 
@@ -64,8 +81,8 @@ body {
     display: block;
     width: max-content;
     padding: 10px;
-    background-color: #31A57A;
-    color: white;
+    background-color: var(--color-card);
+    color: var(--color-white-text);
     text-align: center;
     text-decoration: none;
     font-size: 18px;
@@ -73,7 +90,7 @@ body {
     margin-bottom: 20px;
 }
 .volunteer-button:hover {
-    background-color: #45a049;
+    background-color: var(--color-card-hover);
 }
 .right-section img{
     width: 100%;
@@ -92,7 +109,7 @@ footer {
     border-collapse: collapse;
     width: 50%;
     font-size: 20px;
-    color: #333;
+    color: var(--color-event-name);
     margin-bottom: 20px;
     margin-left: 40px;
 }

@@ -1,4 +1,21 @@
+:root{
+    --color-search-section-font: #000000;
+    --color-profile-info:#E9E3E3;
+    --color-search-bar:#D9D9D9;
+    --color-black-text: #000;
+    --color-black-border: #000;
+    --color-white-text: #fff;
+    --color-shaddow: #00000040;
+    --color-header-footer: #0B545F;
+    --color-card: #31A57A;
+    --color-card-hover:#238e66;
+    --color-backgroung: #FDFFFC;
+    --color-event-name:#333;
+    --color-event-des:#666;
+    --color-event-form-text: #210124;
+    --color-event-from-border:#ccc;
 
+}
 
 main {
     font-family: 'Arial', sans-serif;
@@ -24,7 +41,7 @@ main {
   
   .event-form label {
     flex: 0 0 200px; 
-    color: #210124;
+    color: var(--color-event-form-text);
     display: block;
     margin-bottom: 5px;
     margin-top: 5px;
@@ -37,10 +54,10 @@ main {
   .event-form select,
   .event-form textarea {
     flex: 1;
-    background-color: #D9D9D9;
+    background-color: var(--color-search-bar);
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-event-from-border);
     border-radius: 4px;
   }
   
@@ -57,17 +74,17 @@ main {
   }
   
   .buttons-form button[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
+    background-color: var(--color-card);
+    color: var(--color-white-text);
   }
   
   .buttons-form button[type="button"] {
-    background-color: #D9D9D9;
-    color: #210124;
+    background-color: var(--color-search-bar);
+    color: var(--color-event-form-text);
     margin-left: 10px;
     margin-bottom: 10px;
   }
 
   select{
-    color: #141414;
+    color: var(--color-black-text);
   } 
