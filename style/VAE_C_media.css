@@ -1,0 +1,57 @@
+@media screen and (max-width: 717px) {
+    .current-event-section {
+        height: 490px;
+        margin: 5px;
+        padding: 0px;
+    }
+
+    #create-event-card {
+        width: 0;
+        visibility: hidden;
+    }
+
+    .current-event-section,
+    .previous-event-section {
+        margin: 10;
+    }
+
+    .card {
+        width: auto;
+        height: 450px;
+    }
+
+    #event-img {
+        height: 200;
+        width: auto;
+    }
+
+    #event-name-card {
+        font-size: 40px;
+    }
+
+    .headers {
+        font-size: 30px;
+        padding-top: 20px;
+    }
+
+    .des h5 {
+        font-size: 15px;
+    }
+
+    div.des {
+        height: 90px;
+    }
+
+    .card-button img {
+        width: 80px;
+    }
+
+    .card:hover {
+        transform: scale(1);
+        border: 3px solid black;
+    }
+
+    #search-form {
+        height: 75px;
+    }
+}
