@@ -1,3 +1,5 @@
+
+
 main {
     font-family: 'Arial', sans-serif;
     display: flex;
@@ -7,7 +9,7 @@ main {
   .container {
     width: max-content;
     margin: 0 auto;
-    max-height: 500px; 
+    max-height: fit-content; 
     display: flex;
     overflow: hidden;
     overflow-y: auto;
@@ -17,12 +19,13 @@ main {
   
   .event-form {
     margin-bottom: 20px;
-    width: 700px;;
+    width: 700px;
   }
   
   .event-form label {
-    display: block;
+    flex: 0 0 200px; 
     color: #210124;
+    display: block;
     margin-bottom: 5px;
     margin-top: 5px;
   }
@@ -33,6 +36,7 @@ main {
   .event-form input[type="time"],
   .event-form select,
   .event-form textarea {
+    flex: 1;
     background-color: #D9D9D9;
     width: 100%;
     padding: 10px;
@@ -63,3 +67,7 @@ main {
     margin-left: 10px;
     margin-bottom: 10px;
   }
+
+  select{
+    color: #141414;
+  } 
