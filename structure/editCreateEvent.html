@@ -3,14 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>event</title>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>creator events</title>
     <link rel="stylesheet" href="/style/HeaderFooter.css">
     <link rel="stylesheet" href="/style/ECE.css">
     <script src="/script/st.js"></script>
+    <script src="/script/locationSelector.js"></script>
 </head>
 
 <body>
@@ -32,31 +29,33 @@
                     <input type="text" id="event-name" name="event_name" placeholder="Enter event's name">
                 </div>
                 <div class="event-form">
-                    <label for="location">Location:</label>
-                    <select id="location" name="location">
-                        <option value=""> Choose a location</option>
-                    
-                    </select>
-                </div>
-                <div class="event-form">
-                    <label for="description">Description:</label>
-                    <textarea id="description" name="description" placeholder="Enter a description for the event"></textarea>
-                </div>
-                <div class="event-form">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" placeholder="example@hotmail.com">
                 </div>
                 <div class="event-form">
-                    <label for="date">Date:</label>
-                    <input type="date" id="date" name="date">
+                    <label for="location">Location:</label>
+                    <button onclick="getLocation()">Choose Location</button>
                 </div>
                 <div class="event-form">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description"
+                        placeholder="Enter a description for the event"></textarea>
+                </div>
+                <div class="event-form">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date">
+               
                     <label for="time">Time:</label>
                     <input type="time" id="time" name="time">
                 </div>
                 <div class="event-form">
                     <label for="image">Image:</label>
-                    <input type="file" id="image" name="image">
+                    <label for="fileInput">
+                        <img src="/images/imageSelection.png" alt="imageSelection" alt="Placeholder Image"
+                            id="imagePreview">
+                    </label>
+                    <input type="file" id="fileInput" accept="image/*" style="display:none;">
+
                 </div>
                 <div class="buttons-form">
                     <button type="submit">Apply</button>

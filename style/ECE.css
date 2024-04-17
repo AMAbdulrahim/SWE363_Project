@@ -1,73 +1,156 @@
-
-
 main {
-    font-family: 'Arial', sans-serif;
-    display: flex;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+form {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.container {
+  width: fit-content;
+  margin: 0 auto;
+  max-height: fit-content;
+  display: flex;
+  overflow: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.event-form {
+  margin-bottom: 20px;
+  margin-top: 10px;
+  width: 700px;
+}
+
+.event-form label {
+  flex: 0 0 200px;
+  color: #210124;
+  display: inline-block;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  width: 50px;
+}
+
+.event-form input[type="text"],
+.event-form input[type="email"],
+.event-form input[type="date"],
+.event-form input[type="time"],
+.event-form select,
+.event-form textarea {
+  flex: 1;
+  background-color: #D9D9D9;
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.event-form textarea {
+  height: 100px;
+  width: 97.857%;
+  resize: none;
+}
+
+.buttons-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.buttons-form button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.buttons-form button[type="button"] {
+  background-color: #D9D9D9;
+  color: #210124;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+select {
+  color: #141414;
+}
+
+div.event-form input[type="date"],
+div.event-form input[type="time"],
+div.event-form input[type="email"] {
+  width: 35.8%;
+
+}
+
+
+.event-form label[for="location"]{
+  display: inline;
+}
+
+.event-form label[for="description"],
+.event-form label[for="image"] {
+  display: block;
+}
+
+
+
+.event-form input[type="date"] {
+  margin-right: 10%; 
+}
+
+#imagePreview{
+  margin-left: 50px;
+}
+
+@media screen and (max-width: 750px) {
+
+  main {
     align-items: center;
+      
+        justify-items: center;
   }
-  
+
   .container {
-    width: max-content;
-    margin: 0 auto;
-    max-height: fit-content; 
-    display: flex;
-    overflow: hidden;
-    overflow-y: auto;
-    scrollbar-width: none;
-
+    justify-content: center;
+    align-items: center;
+      
+        justify-items: center;
   }
-  
+
   .event-form {
-    margin-bottom: 20px;
-    width: 700px;
+    width: 80vw;
   }
-  
-  .event-form label {
-    flex: 0 0 200px; 
-    color: #210124;
-    display: block;
-    margin-bottom: 5px;
-    margin-top: 5px;
+  .event-form input[type="date"] {
+    margin-right: 50%; 
+    
   }
-  
-  .event-form input[type="text"],
-  .event-form input[type="email"],
-  .event-form input[type="date"],
-  .event-form input[type="time"],
-  .event-form select,
-  .event-form textarea {
-    flex: 1;
-    background-color: #D9D9D9;
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .event-form textarea {
-    height: 100px;
-    resize: none;
-  }
-  
-  .buttons-form button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .buttons-form button[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-  }
-  
-  .buttons-form button[type="button"] {
-    background-color: #D9D9D9;
-    color: #210124;
-    margin-left: 10px;
-    margin-bottom: 10px;
-  }
+  .event-form input[type="time"] {
+    margin-top:10px; 
 
-  select{
-    color: #141414;
-  } 
+}
+
+}
+
+@media screen and (max-width: 550px) {
+  .event-form label {
+    display: block;
+  }
+  div.event-form input[type="date"],
+div.event-form input[type="time"],
+div.event-form input[type="email"] {
+  width: 196.75px;
+
+}
+
+.event-form input[type="time"] {
+  margin-top:10px; 
+
+}
+}
