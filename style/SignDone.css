@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content {
+    text-align: center;
+}
+
+.Done {
+    font-size: 96px;
+}
+
+button {
+    margin-top: 20px;
+    color: white;
+    background-color: rgba(61, 199, 39, 0.56);
+    font-size: 30px;
+    width: 170px;
+    height: 60px;
+}
+
+.pic {
+    width: 1440px;
+    height: 484px;
+    box-sizing: border-box;
+    background-color: #fefefe;
+    margin-top: auto;
+}
