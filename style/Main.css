@@ -1,0 +1,144 @@
+:root {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    scrollbar-width: none;
+    min-width: 360px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(#fff);
+
+
+
+}
+
+header{ background-color:#0B545F; display: flex;
+    align-items: center; width: 95vw; padding: 0px 40px; height: 100px;
+    justify-content: space-between;}
+
+footer{background-color:#0B545F; display: flex;
+    align-items: center;
+    width: 95vw;
+
+    padding: 0px 40px;
+    box-shadow: 0px 4px 40px 0px var(#00000040);
+    height: 21vw;
+    max-height: 200px;
+    justify-content: center;
+    align-content: center;
+}
+
+.pic{width: 1440px; height: 484px;
+    box-sizing: border-box; background-color: #fefefe;}
+    .sentences{font-size: 30px; position: relative; left: 600px; text-align: justify; top: 50px;}
+
+
+
+
+
+    #logo {
+        display: flex;
+    
+    
+    }
+    
+    #logo-name {
+        display: flex;
+        align-items: center;
+        text-shadow: 0px 4px 4px var(#00000040);
+        color: white;
+        font-size: 2.3vw;
+        font-weight: 700;
+    
+    }
+    
+    #logoimg {
+        height: 100px;
+        width: 100px;
+    }
+    
+    #pfp {
+        height: 80px;
+        width: 80px;
+        margin: 0px 10px;
+        border: 3px solid var(--color-black-border);
+        border-radius: 50%;
+    
+    }
+    
+    #pfp:hover {
+        border: solid 4px var(--color-card-hover);
+    }
+    
+    #logoimg:hover,
+    #pfp:hover {
+        transform: scale(1.05);
+    
+    }
+    
+    
+    .footer-contact {
+        display: flex;
+        gap: 10px;
+    
+    }
+    
+    footer a:hover {
+        transform: scale(1.15);
+    }
+    
+    #contact {
+        display: flex;
+        align-items: center;
+        text-shadow: 0px 4px 4px var(#00000040);
+        color: #fff;
+        font-weight: 700;
+        font-size: 30px;
+    
+    }
+    
+    
+    .scrollup {
+        width: 50px;
+        height: 50px;
+        opacity: 0.5;
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        display: none;
+        text-indent: -9999px;
+        background: url('/images/top_up.png') no-repeat;
+    }
+    .search-section {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        grid-area: 'search-section';
+        justify-content: center;
+        align-items: center;
+        color: #000000;
+      }
+
+      #icon {
+        width: 30px;
+        cursor: pointer;
+        margin-left: auto;
+    }
+    
+    #Volunteer{
+        
+        color: white;
+        position: relative;
+        left: 500px;
+        top: 20px;
+    }
+    #vol{text-decoration: none;}
+
+    #login{
+        
+        color: white;
+        position: relative;
+        left: 465px;
+        
+    }
+    #log{text-decoration: none;}
