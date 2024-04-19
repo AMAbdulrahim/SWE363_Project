@@ -15,6 +15,7 @@
   --color-event-form-text: #210124;
   --color-event-from-border: #ccc;
   --color-ECE-label: #210124;
+  --color-ECE-imagePreview-border:#ccc;
 }
 
 main {
@@ -143,7 +144,7 @@ div.event-form input[type="email"] {
 #imagePreview {
   width: 200px;
  /* height: 200px;*/
-  border: 2px dashed #ccc;
+  border: 2px dashed var(--color-ECE-imagePreview-border);
   display: flex;
   justify-content: center;
   align-items: center;
