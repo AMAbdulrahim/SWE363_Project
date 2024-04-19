@@ -18,6 +18,7 @@
   --color-ECE-imagePreview-border:#ccc;
 }
 
+
 main {
   font-family: 'Arial', sans-serif;
   display: flex;
@@ -124,11 +125,12 @@ div.event-form input[type="email"] {
 }
 
 
-.event-form label[for="location"]{
-  display: inline;
+.event-form input[id="location"]{
+  width: 97.857%;
 }
 
 .event-form label[for="description"],
+.event-form label[for="location"],
 .event-form label[for="image"] {
   display: block;
 }
@@ -192,8 +194,9 @@ div.event-form input[type="email"] {
     display: block;
   }
   div.event-form input[type="date"],
+  div.event-form input[id="city"],
 div.event-form input[type="time"],
-div.event-form input[type="text"],
+
 div.event-form input[type="email"]{
   width: 203.2px;
 

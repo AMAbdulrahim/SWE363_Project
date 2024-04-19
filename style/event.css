@@ -12,12 +12,14 @@
     --color-backgroung: #FDFFFC;
     --color-event-name: #333;
     --color-event-des: #666;
-    --colot-event-info: #f2f2f2;
-
+    --color-event-info: #f2f2f2;
+    --color-event-city: #2200ff;
 
 
 }
-
+a {
+    color: var(--color-event-city); /* Change this color to the desired color */
+}
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
