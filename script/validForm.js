@@ -1,0 +1,20 @@
+
+    function validateForm() {
+        var inputs = document.querySelectorAll('input, textarea');
+        var isValid = true;
+
+        inputs.forEach(function(input) {
+            if (input.value.trim() === '') {
+                isValid = false;
+                input.style.border = '1px solid red';
+            } else {
+                input.style.border = '';
+            }
+        });
+
+        if (!isValid) {
+            alert('Please fill in all fields.');
+            return false;
+        }
+        return true;
+    }
