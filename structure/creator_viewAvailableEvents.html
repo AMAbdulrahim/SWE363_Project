@@ -13,6 +13,7 @@
     <script src="/script/darkMode.js"></script>
     <script src="/script/addCards_curr.js"></script>
     <script src="/script/addCards_prev.js"></script>
+    <script src="/script/creatorView_filter.js"></script>
 </head>
 
 <body>
@@ -35,7 +36,7 @@
             <div>
                 <form id="search-form">
                     <input type="search" id="search-input" name="q" placeholder="Search" />
-                    <button>
+                    <button id="search_button_creator">
                         <svg viewBox="0 0 1024 1024">
                             <path class="path1"
                                 d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z">
@@ -43,9 +44,12 @@
                         </svg>
                     </button>
 
-                    <button>
-                        <img src="/images/filter_button.svg" alt="filter" />
-                    </button>
+                        <select id="select_filter">
+                            <option value="null"></option>
+                            <option value="currSelect">Current</option>
+                            <option value="prevSelect">Previous</option>
+                          </select>
+                   
                 </form>
                 <a href="/structure/editCreateEvent.html">
                     <div class="create-button" id="create-button-under">

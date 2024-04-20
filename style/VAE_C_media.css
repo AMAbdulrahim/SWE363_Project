@@ -1,6 +1,6 @@
 @media screen and (max-width: 717px) {
     .current-event-section {
-        height: 490px;
+        height: 500px;
         margin: 5px;
         padding: 0px;
     }
@@ -27,6 +27,8 @@
 
     #event-name-card {
         font-size: 40px;
+        text-wrap:balance;
+        height: fit-content;
     }
 
     .headers {
@@ -49,6 +51,11 @@
     .card:hover {
         transform: scale(1);
         border: 3px solid black;
+    }
+    .card-button{
+        margin: 20px;
+        height: 80px;
+        gap: 30px;
     }
 
     #search-form {

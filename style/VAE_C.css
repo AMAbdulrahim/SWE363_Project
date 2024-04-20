@@ -179,3 +179,23 @@ a {
   transform: scale(1);
 
 }
+
+
+#select_filter {
+
+  appearance: none;
+  -webkit-appearance: none; /* For Safari */
+  -moz-appearance: none; /* For Firefox */
+  background: url('/images/filter_button.svg') no-repeat; 
+  background-size: contain; 
+  color: var(--color-black-text);
+
+  padding: 20px; 
+  width: 45px; 
+  height: 45px;
+}
+
+#select_filter option {
+  background-color: var(--color-profile-info);
+
+}
