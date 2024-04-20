@@ -14,10 +14,33 @@
   --color-event-des: #666;
   --color-event-form-text: #210124;
   --color-event-from-border: #ccc;
-
+  --color-ECE-label: #210124;
+  --color-ECE-imagePreview-border:#ccc;
 }
 
+
 main {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+form {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.container {
+  width: fit-content;
+  margin: 0 auto;
+  max-height: fit-content;
+  display: flex;
+  overflow: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+  align-items: center;
+  justify-content: center;
   font-family: 'Arial', sans-serif;
   display: flex;
   align-items: center;
@@ -36,15 +59,17 @@ main {
 
 .event-form {
   margin-bottom: 20px;
+  margin-top: 10px;
   width: 700px;
 }
 
 .event-form label {
   flex: 0 0 200px;
-  color: var(--color-event-form-text);
-  display: block;
+  color: var(--color-ECE-label);
+  display: inline-block;
   margin-bottom: 5px;
   margin-top: 5px;
+  width: 50px;
 }
 
 .event-form input[type="text"],
@@ -54,15 +79,16 @@ main {
 .event-form select,
 .event-form textarea {
   flex: 1;
-  background-color: var(--color-search-bar);
-  width: 100%;
+  background-color: #D9D9D9;
+  width: 90%;
   padding: 10px;
-  border: 1px solid var(--color-event-from-border);
+  border: 1px solid #ccc;
   border-radius: 4px;
 }
 
 .event-form textarea {
   height: 100px;
+  width: 97.857%;
   resize: none;
 }
 
@@ -73,18 +99,111 @@ main {
   cursor: pointer;
 }
 
+
 .buttons-form button[type="submit"] {
-  background-color: var(--color-card);
-  color: var(--color-white-text);
+  background-color: #4CAF50;
+  color: white;
 }
 
 .buttons-form button[type="button"] {
-  background-color: var(--color-search-bar);
-  color: var(--color-event-form-text);
+  background-color: #D9D9D9;
+  color: #210124;
   margin-left: 10px;
   margin-bottom: 10px;
 }
 
 select {
-  color: var(--color-black-text);
+  color: #141414;
+}
+
+div.event-form input[type="date"],
+div.event-form input[type="time"],
+div.event-form input[id="city"],
+div.event-form input[type="email"] {
+  width: 35.8%;
+
+}
+
+
+.event-form input[id="location"]{
+  width: 97.857%;
+}
+
+.event-form label[for="description"],
+.event-form label[for="location"],
+.event-form label[for="image"] {
+  display: block;
+}
+
+
+
+.event-form input[type="date"] {
+  margin-right: 10%; 
+}
+
+
+
+#imagePreview {
+  width: 200px;
+ /* height: 200px;*/
+  border: 2px dashed var(--color-ECE-imagePreview-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  background-color: #D9D9D9;
+  border-radius: 4px;
+  margin-bottom: 15;
+}
+
+#imagePreview img {
+  max-width: 100%;
+  max-height: 100%;
+}
+@media screen and (max-width: 750px) {
+
+  main {
+    align-items: center;
+      
+        justify-items: center;
+  }
+
+  .container {
+    justify-content: center;
+    align-items: center;
+      
+        justify-items: center;
+  }
+
+  .event-form {
+    width: 80vw;
+  }
+  .event-form input[type="date"] {
+    margin-right: 50%; 
+    
+  }
+  .event-form input[type="time"] {
+    margin-top:10px; 
+
+}
+
+}
+
+@media screen and (max-width: 550px) {
+  .event-form label {
+    display: block;
+  }
+  div.event-form input[type="date"],
+  div.event-form input[id="city"],
+div.event-form input[type="time"],
+
+div.event-form input[type="email"]{
+  width: 203.2px;
+
+}
+
+.event-form input[type="time"] {
+  margin-top:10px; 
+
+}
 }

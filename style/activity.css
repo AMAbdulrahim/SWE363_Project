@@ -1,0 +1,117 @@
+:root {
+    --color-shaddow: #00000040;
+    --color-header-footer: #0B545F;
+    --color-backgroung: #FDFFFC;
+    --color-card: #31A57A;
+    --color-card-hover:#238e66;
+    --color-search-bar:#D9D9D9;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+
+main{
+    display:grid;
+    grid-template-rows: 230px auto;
+  }
+  main{
+    grid-template-areas: 'profile-info graph';
+    --color-profile-info:#E9E3E3;
+    height: 50vh;
+    justify-content: left;
+    margin-left: 5px;
+    overflow: hidden;
+    height: 100vh;
+    gap: 20px;
+    padding-bottom: 20px;    
+}
+
+footer{
+    margin: 0;
+    
+}
+
+
+
+.profile-info{
+    height: inherit;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-info{
+    grid-area: 'profile-info';
+    
+    align-items: center;
+    justify-content: start;
+    gap: 16px;
+    background-color: var(--color-profile-info);
+    margin-top: 0px;
+    min-width: 300px;
+    
+}
+#profileImg{
+    border: 3px solid black;
+    border-radius: 50%;
+    width: 20vw;
+    max-width: 180px;
+    max-height: 180px;
+    height: 20vw;
+}
+.profile-name{
+
+    color: black;
+
+    text-shadow: 0px 4px 4px var(--color-shaddow);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+
+}
+
+.profile-email, .profile-hours{
+
+    color: black;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+/* .graph{
+
+} */
+
+@media screen and (max-width: 915px){
+    .profile-info{
+        min-width: 0px;  
+    }
+
+}
+@media screen and (max-width: 825px){
+    main{
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        grid-template-areas: 'profile-info' 'profile-event-info';
+        grid-template-rows: 200px 100%;
+        overflow: scroll;
+    }
+    .profile-info{
+        height: fit-content;
+        align-items: center;
+        width: 100vw;
+    }
+    #profileImg{
+        display: none;
+    }
+}
+@media screen and (max-width: 540px){
+    .profile-event-info>h1{
+        display: none;
+    }
+    .profile-event-info{
+        padding: 20px 0;
+        margin: 20px 0;
+    }
+}

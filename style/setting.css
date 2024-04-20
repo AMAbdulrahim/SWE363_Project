@@ -1,0 +1,48 @@
+main{
+    display: grid;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+#logoImg {
+    height: 80%;
+    margin: 0px 10px ;
+    border: 3px solid black;
+    border-radius: 50%;
+    
+}
+/* #logoImg{ */
+    /* border: solid 4px var(--color-card-hover); */
+
+/* } */
+
+#logoImg:hover {
+    transform: scale(1.05); 
+}
+.main-input{
+    display: grid;
+    grid-column: 30% auto auto auto auto auto;
+    padding: 20px ;
+    margin: 40px;
+    text-align: center;
+    height: 90%;
+    width: 50vh;
+}
+
+.inputs{
+    background-color: #D9D9D9;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    height: 40%;
+    accent-color: red;
+}
+#update-button{
+    border-radius: 9px;
+    border: none;
+    width: 30%;
+    margin-left: 140px;
+}
+#update-button:hover {
+    transform: scale(1.05); 
+}

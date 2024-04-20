@@ -1,17 +1,18 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>event</title>
-
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>creator events</title>
     <link rel="stylesheet" href="/style/HeaderFooter.css" />
     <link rel="stylesheet" href="/style/ECE.css" />
     <script src="/script/darkMode.js"></script>
     <script src="/script/st.js"></script>
+    <script src="/script/locationSelector.js"></script>
+    <script src="/script/selectedImg.js"></script>
+    <script src="/script/validForm.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDMkrw0c9-rY_gCxmcd-QxNCzGvLLYPj8&callback=initMap" async defer></script>
+
 </head>
 
 <body>
@@ -25,41 +26,53 @@
 
     <main>
         <div class="container">
-            <form action="/submit-event" method="post">
+            <form action="/submit-event" method="post" onsubmit="return validateForm()">
                 <div class="event-form">
                     <label for="event-name">Event:</label>
-                    <input type="text" id="event-name" name="event_name" placeholder="Enter event's name" />
+                    <input type="text" id="event-name" name="event_name" placeholder="Enter event's name">
+                </div>
+                <div class="event-form">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="example@hotmail.com">
+                </div>
+                <div class="event-form">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" placeholder="Enter event's city">
                 </div>
                 <div class="event-form">
                     <label for="location">Location:</label>
-                    <select id="location" name="location">
-                        <option value="">Choose a location</option>
-                    </select>
+                    <!--<button type="button" onclick="showMap()">Choose Location</button>
+                    <div id="map"></div> --> <!-- Add this div to contain the map 
+                    <input type="hidden" id="locationLat" name="locationLat"> --> <!-- Hidden input to store latitude -->
+                    <!--<input type="hidden" id="locationLng" name="locationLng">  -->  <!-- Hidden input to store longitude --> 
+                    <input type="text" id="location" name="location" placeholder="Paste event Google Maps link" >
                 </div>
+                
                 <div class="event-form">
                     <label for="description">Description:</label>
                     <textarea id="description" name="description"
                         placeholder="Enter a description for the event"></textarea>
                 </div>
                 <div class="event-form">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="example@hotmail.com" />
-                </div>
-                <div class="event-form">
                     <label for="date">Date:</label>
-                    <input type="date" id="date" name="date" />
-                </div>
-                <div class="event-form">
+                    <input type="date" id="date" name="date">
+
                     <label for="time">Time:</label>
                     <input type="time" id="time" name="time" />
                 </div>
                 <div class="event-form">
                     <label for="image">Image:</label>
-                    <input type="file" id="image" name="image" />
+              
+                            <input type="file" id="fileInput" onchange="previewImage(event)" accept="image/*" style="display: none;">
+                            <label for="fileInput" id="fileInputLabel">
+                              <div id="imagePreview">
+                                <img id="previewImg" src="/images/imageSelection.png" alt="imageSelection">
+                              </div>
+                            </label>
                 </div>
                 <div class="buttons-form">
-                    <button type="submit">Apply</button>
-                    <button type="button">Cancle</button>
+                    <button type="submit">Done</button>
+                    <button type="button" onclick="history.back()">Cancel</button>
                 </div>
             </form>
         </div>
