@@ -59,7 +59,7 @@ main {
   background-color: var(--color-card);
   padding: 12px 10px 10px 10px;
   width: 300px;
-  height: 340px;
+  height: 360px;
   border-radius: 20px;
 
 }
@@ -67,6 +67,7 @@ main {
 .title-card,
 .des-card {
   margin-left: 10px;
+  overflow: hidden;
 }
 
 .title-card {
@@ -79,6 +80,7 @@ main {
 
 .des>* {
   margin: 5px;
+  
 }
 
 .card img {
@@ -88,10 +90,10 @@ main {
 }
 
 .card-button {
-  height: 50px;
+  height: 60px;
   display: flex;
   justify-content: right;
-
+  
 }
 
 .card:hover {
@@ -103,20 +105,21 @@ main {
 .add-button {
   all: unset;
   cursor: pointer;
-  width: 50px;
-  height: 50px;
-  padding: 5px 10px 10px 10px;
+  width: 55px;
+  height: 55px;
+  margin-right: 10px;
 
 }
 
 .add-button:hover {
-  transform: scale(1.15);
+  transform: scale(1.1);
 
 }
 
 #event-name-card {
   overflow: hidden;
   width: 280px;
+  height: 36px;
 }
 
 
@@ -125,7 +128,6 @@ main {
 
 
 
-/* Small Devices (phones) */
 @media screen and (max-width: 700px) {
   .cards-section {
     grid-template-columns: auto;
@@ -133,7 +135,7 @@ main {
 
   }
 
-  .card {
+  /* .card {
     padding: 20px 15px 15px 20px;
     width: 90vw;
     height: 640px;
@@ -195,8 +197,8 @@ main {
     overflow: hidden;
     width: inherit;
   }
-
-}
+*/
+} 
 
 @media screen and (max-width: 527px) {
   .search-section h1 {
