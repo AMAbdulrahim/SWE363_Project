@@ -23,6 +23,12 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>
            
         </div>
+
+        <div class="review-card">
+                    <button id="reviewBtn">
+                        review
+                    </button>
+        </div>
     </div> 
         `;
     }

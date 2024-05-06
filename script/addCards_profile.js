@@ -22,9 +22,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 <h5 id="event-des">Description about the event Description about the event Description about the event Description about the event</h5>
             </div>
             <div class="card-des">
-                <h5 id="event-date">31/12/2024</h5>
-                <h5 id="event-time">3:30 pm</h5>
-            </div>
+                        <div>
+                            <h5 id="event-date">31/12/2024</h5>
+                            <h5 id="event-time">3:30 pm</h5>
+                        </div>
+                        <div class="review-card">
+                            <button id="reviewBtn">
+                                review
+                            </button>
+                        </div>
+
+
+                    </div>
+
         `;
         
         // Append the newly created .card element to the .profile-event-info section

@@ -159,9 +159,22 @@ footer {
     width: 100px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 30px;
     align-items: center;
-    justify-content: center;
+    padding: auto;
+    
+}
+.card-des>div h5:first-child{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+
+#reviewBtn{
+    margin-top: auto;
+    width: 80px;
+    height: 40px;
+    
 }
 
 
