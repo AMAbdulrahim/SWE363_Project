@@ -9,8 +9,11 @@
     <script src="/script/scrollUp.js"></script>
     <script src="/script/st.js"></script>
     <script src="/script/darkMode.js"></script>
+    <script src="/script/passVisible.js"></script>
+
     <title>signup</title>
 </head>
+
 
 
 <body>
@@ -48,7 +51,9 @@
                 <input type="text" name="city" id="City" placeholder="City">
             </p>
             <p>
-                <input type="password" name="password" id="Password" placeholder="Password">
+                <input type="password" name="password" id="Password" placeholder="Password"> 
+                <input id="passVisBtn" type="checkbox" onclick="togglePasswordVisibility()">
+
             </p>
             <input type="submit" value="Signup">
         </form>
