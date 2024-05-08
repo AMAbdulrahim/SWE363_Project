@@ -1,77 +1,60 @@
-import express from "express";
-import mongoose from "mongoose";
-import dotenv from "dotenv";
-import bodyParser from "body-parser";
+const dotenv = require("dotenv");
+const mongoose = require("mongoose");
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require('cors');
+
+const PORT = 8000;
+const MONGO_URL = "mongodb://localhost:27017/dbApp";
 
 const app = express();
 dotenv.config();
 
-const PORT = process.env.PORT || 7000;
-const MONGO_URL = process.env.MONGO_URL;
+// Middleware
+app.use(cors()); // Enable CORS
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(express.static('structure'));
 
-var dbConn = mongoose.connect(MONGO_URL);
+// Define User Model
+const User = require("./models/user");
+
+// Define User Route
+app.post('/user', async (req, res) => {
+    try {
+        // Check if email already exists
+        const existingUser = await User.findOne({ email: req.body.email });
+        if (existingUser) {
+            return res.status(400).json({ message: 'Email already exists' }); // Return specific error message
+        }
+
+        // If email is unique, create a new user
+        const newUser = new User({
+            name: req.body.name,
+            email: req.body.email,
+            city: req.body.city,
+            password: req.body.password
+        });
+        await newUser.save();
+        res.status(201).json(newUser);
+    } catch (error) {
+        console.error("Error creating user:", error.message);
+        res.status(500).json({ message: 'Error creating user' }); // Generic error message for other errors
+    }
+});
 
 
-dbConn.then(() => {
-        console.log("Database is connected..");
+// Connect to MongoDB
+mongoose.connect(MONGO_URL)
+    .then(() => {
+        console.log("Database connected...");
+        // Start the server after the database connection is established
+        const PORT = process.env.PORT || 8000;
         app.listen(PORT, () => {
-            console.log('Server is running on port %d', PORT);
+            console.log(`Server is running on port ${PORT}`);
         });
     })
     .catch((error) => {
-        console.error("Error connecting to database:", error);
+        console.error("Error connecting to database:", error.message);
     });
 
-const userSchema = new mongoose.Schema({
-    name: 
-    {type:  String,
-        minlength: 6,
-        maxlength: 255,
-    },
-    email: 
-    { 
-        type: String,
-        maxlength: 255,
-    },
-    city: 
-    {type:String,
-    },
-    password: 
-    { type: String,
-        minlength: 6,
-        maxlength: 1024,
-   }
-});
-
-const userModel = mongoose.model("users", userSchema);
-
-app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(express.static(path.resolve(__dirname, 'public')));
-app.use(bodyParser.json());
-app.use(express.json());
-
-
-
-
-app.post('/user', async (req, res) => {
-    app.post('/post-feedback', function (req, res) {
-        dbConn.then(function(db) {
-            delete req.body._id; // for safety reasons
-            db.collection('users').insertOne(req.body);
-        });    
-        res.send('Data received:\n' + JSON.stringify(req.body));
-    });
-});
-
-
-// app.get("/getUsers", async (req, res) => {
-//     try {
-//         const userdata = await userModel.find({ name: "Ali" }).exec();
-//         res.json(userdata);
-//     } catch (error) {
-//         console.error('Error fetching users:', error);
-//         res.status(500).send('Error fetching users');
-//     }
-// });
-
-// Additional routes can be defined here

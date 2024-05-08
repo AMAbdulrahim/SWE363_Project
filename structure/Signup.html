@@ -35,23 +35,24 @@
 <div class="center-box">
     <fieldset>
 
-        <form method="post" action="http://localhost:8000/user" >
+        <form method="POST" action="http://localhost:8000/user" onsubmit="return validateForm()">
             <img src="/images/pfp.png" alt="UserImg" class="userImg">
             
             <p>
-                <input type="text" name="Name" id="Name" placeholder="Name">
+                <input type="text" name="name" id="Name" placeholder="Name">
             </p>
             <p>
-                <input type="text" name="Email" id="Email" placeholder="Email">
+                <input type="text" name="email" id="Email" placeholder="Email">
             </p>
             <p>
-                <input type="text" name="City" id="City" placeholder="City">
+                <input type="text" name="city" id="City" placeholder="City">
             </p>
             <p>
-                <input type="password" name="Password" id="Password" placeholder="Password">
+                <input type="password" name="password" id="Password" placeholder="Password">
             </p>
-            <input type="submit" onclick="validateForm()" value="Signup">
+            <input type="submit" value="Signup">
         </form>
+        
     </fieldset>
     
 </div>
