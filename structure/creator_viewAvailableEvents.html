@@ -14,6 +14,7 @@
     <script src="/script/addCards_curr.js"></script>
     <script src="/script/addCards_prev.js"></script>
     <script src="/script/creatorView_filter.js"></script>
+
 </head>
 
 <body>
@@ -125,9 +126,8 @@
                 </div>
 
                 <div class="review-card">
-                    <button id="reviewBtn">
-                        review
-                    </button>
+                    <button id="reviewBtn" onclick="redirectToReview()">Review</button>
+
                 </div>
             </div>
 
@@ -146,6 +146,13 @@
         <a href="#" class="scrollup">Scroll</a>
       </code>
     </footer>
+
+    <script>
+        function redirectToReview() {
+            window.location.href = "review.html";
+        }
+    </script>
+
 </body>
 
 </html>

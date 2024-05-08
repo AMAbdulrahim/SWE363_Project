@@ -30,13 +30,16 @@
 <div class="center-box">
     <fieldset>
         
-        <p>
-            <input type="text" name="Email" id="Email" placeholder="Email">
-        </p>
-        <p>
-            <input type="password" name="Password" id="Password" placeholder="password">
-        </p>
-        <button type="submit" onclick="validateForm()">Login</button>
+        <form method="POST" action="http://localhost:8000/login" onsubmit="return validateLogin()">
+            <p>
+                <input type="text" name="email" id="Email" placeholder="Email">
+            </p>
+            <p>
+                <input type="password" name="password" id="Password" placeholder="Password">
+            </p>
+            <button type="submit">Login</button>
+        </form>
+        
     </fieldset>
     <div><a href="/structure/Signup.html"  class="signup-text">Don’t have an account? (sign up) </a></div>
     

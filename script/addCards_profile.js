@@ -27,9 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             <h5 id="event-time">3:30 pm</h5>
                         </div>
                         <div class="review-card">
-                            <button id="reviewBtn">
-                                review
-                            </button>
+                        <button id="reviewBtn" onclick="redirectToReview()">Review</button>
+
                         </div>
 
 
@@ -41,3 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
         profileEventInfo.appendChild(card);
     }
 });
+
+
+

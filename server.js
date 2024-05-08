@@ -43,6 +43,32 @@ app.post('/user', async (req, res) => {
     }
 });
 
+// Define Login Route
+app.post('/login', async (req, res) => {
+    try {
+        // Find user by email
+        const user = await User.findOne({ email: req.body.email });
+
+        // Check if user exists
+        if (!user) {
+            return res.status(400).json({ message: 'Invalid email or password' });
+        }
+
+        // Check if password is correct
+        if (user.password !== req.body.password) {
+            return res.status(400).json({ message: 'Invalid email or password' });
+        }
+
+        // If email and password are valid, log in user
+        res.status(200).json({ message: 'Login successful', user: user.name });
+    } catch (error) {
+        console.error("Error logging in:", error.message);
+        res.status(500).json({ message: 'Error logging in' }); // Generic error message for other errors
+    }
+});
+
+
+
 
 // Connect to MongoDB
 mongoose.connect(MONGO_URL)

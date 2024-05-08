@@ -6,12 +6,10 @@ document.addEventListener("DOMContentLoaded", function() {
         
         <div class="img-card">
             <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image">
-
         </div>
 
         <div class="title-card">
             <h1 id="event-name-card">EVENT NAME</h1>
-
         </div>
 
         <div class="des-card">
@@ -19,15 +17,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 <h5 id="event-des">Description about the event</h5>
                 <h5 id="event-date">Date: 31/12/2024</h5>
                 <h5 id="event-time">Time: 3:30 pm</h5>
-
-            </div>
-           
+            </div> 
         </div>
 
         <div class="review-card">
-                    <button id="reviewBtn">
-                        review
-                    </button>
+        <button id="reviewBtn" onclick="redirectToReview()">Review</button>
         </div>
     </div> 
         `;
@@ -50,6 +44,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // Add 10 cards to the previous-event-section
     addCardsToSection_prev('previous-event-section');
 });
+
+
+
 
 
 

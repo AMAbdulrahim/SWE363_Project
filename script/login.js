@@ -1,42 +1,36 @@
-
-
-function validateForm() {
+function validateLogin() {
     var email = document.getElementById('Email').value;
     var password = document.getElementById('Password').value;
-    var emailRegex = /^[^\d][\w.-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
-    var passwordRegex = /^(?=.*[a-zA-Z])(?=.*\W).{6,20}$/;
 
-    if (email === '' && password === '') {
-        alert('Please fill both fields');
-        return false;
-    } else if (email === '' || email === null) {
-        alert('Please fill email field');
-        return false;
-    }
-    else if (!emailRegex.test(email)) {
-    alert('Please enter a valid email address');
-    return false;
-    } else if (password === '' || password === null) {
-        alert('Please fill password field');
+    if (email === '' || password === '') {
+        alert('Please fill in both email and password fields');
         return false;
     }
 
-    else if (password.length < 6 || password.length > 20) {
-    alert('Password must be between 6 and 20 characters');
-    return false;
-} 
-else if (!passwordRegex.test(password)) {
-    alert('Password must contain at least one letter and one character');
-    return false;
-} 
+    var formData = {
+        email: email,
+        password: password
+    };
 
-else if (password.toLowerCase() === "password") {
-    alert('Please choose a different password');
-    return false;
-   }  
-else {
-        window.location.href = "signDone.html";
-        return false; 
-    }
+    fetch('http://localhost:8000/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('User logged in successfully');
+            window.location.href = './profile.html'; // Redirect to dashboard or home page
+        } else {
+            throw new Error('Login failed');
+        }
+    })
+    .catch(error => {
+        console.error('Error logging in:', error);
+        alert('Invalid email or password. Please try again.'); // Display error message
+    });
+
+    return false; // Prevent the form from submitting normally
 }
-
