@@ -20,6 +20,8 @@ app.use(express.static('structure'));
 
 // Define User Model
 const User = require("./models/user");
+const Event = require("./models/event")
+
 
 // Define User Route
 app.post('/user', async (req, res) => {
@@ -75,8 +77,19 @@ app.post('/login', async (req, res) => {
     }
 });
 
+// Events endpoint
+app.get('/events', async (req, res) => {
+    try {
+        // Fetch events from the database
+        const events = await Event.find();
 
-
+        // Send the events as JSON response
+        res.json(events);
+    } catch (error) {
+        console.error("Error fetching events:", error.message);
+        res.status(500).json({ message: 'Error fetching events' });
+    }
+});
 
 
 // Connect to MongoDB
@@ -93,3 +106,10 @@ mongoose.connect(MONGO_URL)
         console.error("Error connecting to database:", error.message);
     });
 
+
+
+
+    
+
+    
+  

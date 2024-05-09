@@ -7,7 +7,7 @@
     "devStart": "nodemon server.js"
   },
   "author": "",
-  "type": "commonJS",
+  "type": "commonjs",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
