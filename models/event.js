@@ -16,7 +16,23 @@ const eventSchema = new mongoose.Schema({
     eventTime: {
         type: String,
         required: true
+    },
+    eventImage: {
+        type: String,
+        required: false
+    },
+    eventLoc: {
+        type: String,
+        required: false
+    },
+    eventEmail: {
+        type: String,
+        required: false
+    },
+    eventCity: {
+        type: String,
+        required: false
     }
 });
 
-module.exports = mongoose.model('event', eventSchema);
+module.exports = mongoose.model('Event', eventSchema);

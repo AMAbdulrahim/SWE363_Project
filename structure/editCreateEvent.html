@@ -26,18 +26,20 @@
 
     <main>
         <div class="container">
-            <form action="/submit-event" method="post" onsubmit="return validateForm()">
+            
+
+            <form action="http://localhost:8000/submitEvent" method="POST" onsubmit="return validateForm()">
                 <div class="event-form">
                     <label for="event-name">Event:</label>
-                    <input type="text" id="event-name" name="event_name" placeholder="Enter event's name">
+                    <input type="text" id="event-name" name="eventName" placeholder="Enter event's name">
                 </div>
                 <div class="event-form">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="example@hotmail.com">
+                    <input type="email" id="email" name="eventEmail" placeholder="example@hotmail.com">
                 </div>
                 <div class="event-form">
                     <label for="city">City:</label>
-                    <input type="text" id="city" name="city" placeholder="Enter event's city">
+                    <input type="text" id="city" name="eventCity" placeholder="Enter event's city">
                 </div>
                 <div class="event-form">
                     <label for="location">Location:</label>
@@ -45,25 +47,25 @@
                     <div id="map"></div> --> <!-- Add this div to contain the map 
                     <input type="hidden" id="locationLat" name="locationLat"> --> <!-- Hidden input to store latitude -->
                     <!--<input type="hidden" id="locationLng" name="locationLng">  -->  <!-- Hidden input to store longitude --> 
-                    <input type="text" id="location" name="location" placeholder="Paste event Google Maps link" >
+                    <input type="text" id="location" name="eventLoc" placeholder="Paste event Google Maps link" >
                 </div>
                 
                 <div class="event-form">
                     <label for="description">Description:</label>
-                    <textarea id="description" name="description"
+                    <textarea id="description" name="eventDes"
                         placeholder="Enter a description for the event"></textarea>
                 </div>
                 <div class="event-form">
                     <label for="date">Date:</label>
-                    <input type="date" id="date" name="date">
+                    <input type="date" id="date" name="eventDate">
 
                     <label for="time">Time:</label>
-                    <input type="time" id="time" name="time" />
+                    <input type="time" id="time" name="eventTime" />
                 </div>
                 <div class="event-form">
                     <label for="image">Image:</label>
               
-                            <input type="file" id="fileInput" onchange="previewImage(event)" accept="image/*" style="display: none;">
+                            <input type="file" name="eventImage" id="fileInput" onchange="previewImage(event)" accept="image/*" style="display: none;">
                             <label for="fileInput" id="fileInputLabel">
                               <div id="imagePreview">
                                 <img id="previewImg" src="/images/imageSelection.png" alt="imageSelection">
@@ -71,10 +73,13 @@
                             </label>
                 </div>
                 <div class="buttons-form">
-                    <button type="submit">Done</button>
                     <button type="button" onclick="history.back()">Cancel</button>
+                    <button type="submit">Done</button>
+
                 </div>
             </form>
+
+
         </div>
     </main>
     <footer>

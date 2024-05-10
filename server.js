@@ -4,6 +4,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require('cors');
 const bcrypt = require('bcrypt');
+const multer = require('multer');
+const path = require('path');
 
 
 const PORT = 8000;
@@ -18,9 +20,24 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('structure'));
 
-// Define User Model
+// Define Models
 const User = require("./models/user");
 const Event = require("./models/event")
+
+
+
+// Define storage for the uploaded images
+const storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, './eventImgsUpload/'); // Set destination folder for uploaded files
+    },
+    filename: function(req, file, cb) {
+        cb(null, Date.now() + path.extname(file.originalname)); // Set file name with timestamp
+    }
+});
+
+// Initialize multer with defined storage
+const upload = multer({ storage: storage });
 
 
 // Define User Route
@@ -91,6 +108,29 @@ app.get('/events', async (req, res) => {
     }
 });
 
+// Event submission route with file upload
+app.post('/submitEvent', upload.single('eventImage'), async (req, res) => {
+    try {
+        // Create a new event based on the submitted data
+        const newEvent = new Event({
+            eventName: req.body.eventName,
+            eventDes: req.body.eventDes,
+            eventDate: req.body.eventDate,
+            eventTime: req.body.eventTime,
+            eventImage: req.file ? req.file.path : '', // Store the path to the uploaded image file, if exists
+            eventLoc: req.body.eventLoc
+        });
+
+        // Save the new event to the database
+        await newEvent.save();
+
+        // Send a success response
+        res.status(201).json({ message: 'Event submitted successfully', event: newEvent });
+    } catch (error) {
+        console.error("Error submitting event:", error.message);
+        res.status(500).json({ message: 'Error submitting event' });
+    }
+});
 
 // Connect to MongoDB
 mongoose.connect(MONGO_URL)
