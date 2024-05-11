@@ -3,6 +3,7 @@ function validateForm() {
     var password = document.getElementById('Password').value;
     var city = document.getElementById('City').value;
     var name = document.getElementById('Name').value;
+    var userType = document.querySelector('input[name="userType"]:checked').value; // Get selected user type
     var emailRegex = /^[^\d][\w.-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
     var passwordRegex = /^(?=.*[a-zA-Z])(?=.*\W).{6,20}$/;
     var nameCityRegex = /^[a-zA-Z\s]+$/;
@@ -34,6 +35,7 @@ function validateForm() {
             name: name,
             email: email,
             city: city,
+            userType: userType, // Include selected user type in the request body
             password: password
         };
 

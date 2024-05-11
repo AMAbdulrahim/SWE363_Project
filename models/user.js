@@ -31,7 +31,13 @@ const userSchema = new mongoose.Schema({
         minlength: 6,
         required: true,
 
-   }
+    },
+    userType: 
+    {
+        type: String,
+        enum: ['creator', 'volunteer'], // Ensures only 'creator' or 'volunteer' values are allowed
+        default: 'volunteer' // Sets default value to 'volunteer'
+    }
 })
 
 module.exports = mongoose.model("User", userSchema)

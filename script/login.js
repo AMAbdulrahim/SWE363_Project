@@ -21,10 +21,21 @@ function validateLogin() {
     })
     .then(response => {
         if (response.ok) {
-            console.log('User logged in successfully');
-            window.location.href = './profile.html'; // Redirect to dashboard or home page
+            return response.json(); // Parse response body as JSON
         } else {
             throw new Error('Login failed');
+        }
+    })
+    .then(data => {
+        // Check user type and redirect accordingly
+        if (data && data.user && data.user.userType === 'volunteer') {
+            console.log('Volunteer logged in successfully');
+            window.location.href = './profile.html'; // Redirect to volunteer profile page
+        } else if (data && data.user && data.user.userType === 'creator') {
+            console.log('Creator logged in successfully');
+            window.location.href = './creator_viewAvailableEvents.html'; // Redirect to creator view available events page
+        } else {
+            throw new Error('Invalid user type');
         }
     })
     .catch(error => {

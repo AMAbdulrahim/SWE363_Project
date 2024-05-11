@@ -57,6 +57,7 @@ app.post('/user', async (req, res) => {
             name: req.body.name,
             email: req.body.email,
             city: req.body.city,
+            userType: req.body.userType, // Add userType field based on the selected radio button
             password: hashedPassword // Store the hashed password in the database
         });
         await newUser.save();
