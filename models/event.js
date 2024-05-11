@@ -1,6 +1,12 @@
 const mongoose = require('mongoose');
+const autoIncr = require('mongoose-sequence')(mongoose);
+
 
 const eventSchema = new mongoose.Schema({
+    id:
+    {
+        type:Number
+    },
     eventName: {
         type: String,
         required: true
@@ -46,5 +52,7 @@ const eventSchema = new mongoose.Schema({
     //     }
     // }]
 });
+
+eventSchema.plugin(autoIncr,{inc_field:'id'})
 
 module.exports = mongoose.model('Event', eventSchema);

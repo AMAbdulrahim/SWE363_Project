@@ -30,10 +30,16 @@ function validateLogin() {
         // Check user type and redirect accordingly
         if (data && data.user && data.user.userType === 'volunteer') {
             console.log('Volunteer logged in successfully');
+            sessionStorage.setItem('userData', JSON.stringify(data.user));
+            alert('Welcome, ' + data.user.name);
             window.location.href = './profile.html'; // Redirect to volunteer profile page
+            
         } else if (data && data.user && data.user.userType === 'creator') {
             console.log('Creator logged in successfully');
+            sessionStorage.setItem('userData', JSON.stringify(data.user));
+            alert('Welcome, ' + data.user.name);
             window.location.href = './creator_viewAvailableEvents.html'; // Redirect to creator view available events page
+       
         } else {
             throw new Error('Invalid user type');
         }
@@ -45,3 +51,18 @@ function validateLogin() {
 
     return false; // Prevent the form from submitting normally
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
