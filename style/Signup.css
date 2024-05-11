@@ -75,7 +75,8 @@ header{ background-color:#0B545F; display: flex;
                     bottom: 250px;
                 }
 
-                .sentences{font-size: 50px; position: relative; left: 900px;
+                .sentences{
+                    font-size: 50px; position: relative; left: 900px;
                 top: 200px;}
                 .footer-contact {
                     display: flex;
@@ -174,4 +175,13 @@ header{ background-color:#0B545F; display: flex;
                     display: flex;
                     align-items: center;
                     
+                }
+                p{
+                    width: fit-content;
+                }
+                form{
+                    width: max-content;
+                }
+                fieldset{
+                    width: fit-content;
                 }
