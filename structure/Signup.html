@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <link href="/style/Signup.css" rel="stylesheet">
     <script src="/script/signup.js"></script>
     <script src="/script/scrollUp.js"></script>
@@ -13,8 +13,6 @@
 
     <title>signup</title>
 </head>
-
-
 
 <body>
 
@@ -51,22 +49,26 @@
                 <input type="text" name="city" id="City" placeholder="City">
             </p>
             <p>
-                <label>
-                    <input type="radio" name="userType" value="creator" >
-                    Creator
-                </label>
-                <label>
-                    <input type="radio" name="userType" value="volunteer" checked>
-                    Volunteer
-                </label>
+                <div class="radio-container">
+                    <label class="radioBtnLbl">
+                        <input class="radioBtn" type="radio" name="userType" value="creator" >
+                        Creator
+                    </label>
+                    <label class="radioBtnLbl">
+                        <input class="radioBtn" type="radio" name="userType" value="volunteer" checked>
+                        Volunteer
+                    </label>
+                </div>
             </p>
             
             <p>
-                <input type="password" name="password" id="Password" placeholder="Password"> 
-                <input id="passVisBtn" type="checkbox" onclick="togglePasswordVisibility()">
+                <div class="pass-container">
+                    <input type="password" name="password" id="Password" placeholder="Password">
+                    <input id="passVisBtn" type="checkbox" onclick="togglePasswordVisibility()">
+                </div>
 
             </p>
-            <input type="submit" value="Signup">
+            <input id="signupBtn" type="submit" value="Signup">
         </form>
         
     </fieldset>

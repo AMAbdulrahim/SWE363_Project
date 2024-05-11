@@ -38,6 +38,12 @@ const userSchema = new mongoose.Schema({
         enum: ['creator', 'volunteer'], // Ensures only 'creator' or 'volunteer' values are allowed
         default: 'volunteer' // Sets default value to 'volunteer'
     }
+    // volunteeredIn: [{
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'events'
+    // }],
+
+  
 })
 
 module.exports = mongoose.model("User", userSchema)

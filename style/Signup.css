@@ -24,7 +24,7 @@ header{ background-color:#0B545F; display: flex;
         align-content: center;
     }
 
-
+  
 
     .icons{width: 64px; height: 64px;
         background-color:#0B545F;color: #0B545F; }
@@ -37,7 +37,7 @@ header{ background-color:#0B545F; display: flex;
     }
 
     input { 
-        width: 344px;
+        width: 364px;
         height: 30px;
             background-color: #f0f0f0;
             border: none;
@@ -131,4 +131,47 @@ header{ background-color:#0B545F; display: flex;
                     width: 100px;
                 }
 
+                #signupBtn{
+                    width: 384px;
+                    height: 50px;
+                    background-color: #0B545F ;
+                    color: white;
+                    font-size: 22px;
+                    font-weight: 600;
+                }
+
+                #Password{
+                    width: 330px;
+                }
+
+                .radioBtnLbl{
+                    display: flex;
+                    align-items: center;
+
+                }
+
+
+                .radio-container{
+                    display: flex;
+                    gap: 20px;
+                    justify-content: center;
+                    align-items: center;
+                    width: 364px;
+                    height: 35px;
+                    
+                }
+                input.radioBtn{
+                    height: 30px;
+                    width: 30px;
+                }
+              
+                #passVisBtn{
+                    height: 30px;
+                    width: 30px;
+                }
             
+                .pass-container{
+                    display: flex;
+                    align-items: center;
+                    
+                }

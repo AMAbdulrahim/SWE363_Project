@@ -33,6 +33,18 @@ const eventSchema = new mongoose.Schema({
         type: String,
         required: false
     }
+    // volunteered : [user]
+
+    // reviews: [{
+    //     comment: {
+    //         type: String,
+    //         required: true
+    //     },
+    //     reviewerName: {
+    //         type: String,
+    //         required: true
+    //     }
+    // }]
 });
 
 module.exports = mongoose.model('Event', eventSchema);
