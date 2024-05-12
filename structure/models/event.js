@@ -38,19 +38,19 @@ const eventSchema = new mongoose.Schema({
     eventCity: {
         type: String,
         required: false
+    },
+    creatoremail:{type: String },
+    creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }, 
+    volunteers: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+    //
+    hours:{ type: Number, default:0},
+    month:{ type:String},
+    //
+    
+    activity:{
+        moth: String,
+        hours: Number
     }
-    // volunteered : [user]
-
-    // reviews: [{
-    //     comment: {
-    //         type: String,
-    //         required: true
-    //     },
-    //     reviewerName: {
-    //         type: String,
-    //         required: true
-    //     }
-    // }]
 });
 
 eventSchema.plugin(autoIncr,{inc_field:'id'})

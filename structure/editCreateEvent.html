@@ -22,13 +22,16 @@
             <h1 id="logo-name">Events</h1>
         </div>
         <img src="/images/moon.png" id="icon" />
+        <a href="./index.html" id="logout">logout</a>
+
     </header>
 
     <main>
         <div class="container">
             
 
-            <form action="http://localhost:8000/submitEvent" method="POST" onsubmit="return validateForm()">
+            <!-- <form action="http://localhost:8000/submitEvent" method="POST" onsubmit="return validateForm()"> -->
+            <form method="POST" onsubmit="return submitEventForm()">
                 <div class="event-form">
                     <label for="event-name">Event:</label>
                     <input type="text" id="event-name" name="eventName" placeholder="Enter event's name">
@@ -48,6 +51,8 @@
                     <input type="hidden" id="locationLat" name="locationLat"> --> <!-- Hidden input to store latitude -->
                     <!--<input type="hidden" id="locationLng" name="locationLng">  -->  <!-- Hidden input to store longitude --> 
                     <input type="text" id="location" name="eventLoc" placeholder="Paste event Google Maps link" >
+                    <label for="hours">hours:</label>
+                    <input type="text" id="hours" name="eventHours" placeholder="please enter event duration in hours">
                 </div>
                 
                 <div class="event-form">
@@ -64,7 +69,6 @@
                 </div>
                 <div class="event-form">
                     <label for="image">Image:</label>
-              
                             <input type="file" name="eventImage" id="fileInput" onchange="previewImage(event)" accept="image/*" style="display: none;">
                             <label for="fileInput" id="fileInputLabel">
                               <div id="imagePreview">
@@ -75,11 +79,8 @@
                 <div class="buttons-form">
                     <button type="button" onclick="history.back()">Cancel</button>
                     <button type="submit">Done</button>
-
                 </div>
             </form>
-
-
         </div>
     </main>
     <footer>
@@ -94,6 +95,52 @@
             <a href="https://twitter.com/" target="_blank"><img src="/images/twitter_icon.png" /></a><br />
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const logoutLink = document.getElementById('logout');
+
+            logoutLink.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent the default link behavior
+
+                console.log("reached")
+                sessionStorage.clear();
+
+                // Redirect to the homepage
+                window.location.href = './index.html';
+            });
+        });
+        function submitEventForm() {
+            event.preventDefault();
+            var userDataJSON = sessionStorage.getItem('userData');
+            if (userDataJSON) {
+                var userData = JSON.parse(userDataJSON);                        
+                var profileEmailElement = userData.email;
+            }
+
+            const formData = new FormData(document.querySelector('form'));
+            formData.append('creatorEmail',profileEmailElement)
+            fetch('http://localhost:8000/submitEvent', {
+                method: 'POST',
+                body: formData  
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = '/creator_viewAvailableEvents.html';
+                } else {
+                    alert('Failed to submit event. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error submitting event:', error);
+                alert('Error in event submission: ' + error.message);
+            });
+        
+            return false; 
+
+        }
+        </script>
+        
 </body>
 
 </html>

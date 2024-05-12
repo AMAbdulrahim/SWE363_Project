@@ -12,11 +12,7 @@
     <script src="/script/scrollUp.js"></script>
     <script src="/script/st.js"></script> <!--for the scroll up button-->
     <script src="/script/userData.js"></script>
-
-
     <title>Profile</title>
-
-
 </head>
 
 <body>
@@ -24,22 +20,23 @@
     <header>
 
         <div style="display:flex">
-            <a href="/structure/profile.html"><img id="pfp" src="/images/pfp.png" alt="pfp"> </a>
+            <!-- <a href="/profile.html"><img id="pfp" src="/images/pfp.png" alt="pfp"> </a> -->
+            <a href="" id="logout"><img src="./images/images.png" id="icon"></a>
             <h1 id="logo-name">Hi, <span id="profileName">Fname</span>!</h1>
         </div>
 
         <div class="header-bar">
 
             <div>
-                <a href="/structure/ViewAvailableEvents.html"><button id="header-events"
+                <a href="/ViewAvailableEvents.html"><button id="header-events"
                         class="header-bar-buttons">Events</button></a>
             </div>
             <div>
-                <a href="/structure/activity.html"><button id="header-activity"
+                <a href="/activity.html"><button id="header-activity"
                         class="header-bar-buttons">Activity</button></a>
             </div>
             <div>
-                <a href="/structure/settings.html"><button id="header-settings"
+                <a href="/settings.html"><button id="header-settings"
                         class="header-bar-buttons">Settings</button></a>
             </div>
 
@@ -51,9 +48,9 @@
 
         <div class="header-select">
             <select class="header-select-buttons" id="changePageSelect" onchange="redirectToPage()">
-                <option value="/structure/ViewAvailableEvents.html">Events</option>
-                <option value="/structure/activity.html">Activity</option>
-                <option value="/structure/settings.html">Settings</option>
+                <option value="/ViewAvailableEvents.html">Events</option>
+                <option value="/activity.html">Activity</option>
+                <option value="/settings.html">Settings</option>
             </select>
 
         </div>
@@ -105,16 +102,10 @@
                     </div>
 
                     <div class="des">
-                        <h1 id="event-name-card">first one</h1>
-                        <h5 id="event-des">Description about the event Description about the event Description about the
-                            event Description about the event</h5>
-
                     </div>
 
                     <div class="card-des">
                         <div>
-                            <h5 id="event-date">31/12/2024</h5>
-                            <h5 id="event-time">3:30 pm</h5>
                         </div>
                         <div class="review-card">
                             <button id="reviewBtn" onclick="redirectToReview()">Review</button>

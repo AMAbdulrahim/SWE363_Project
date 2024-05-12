@@ -12,25 +12,19 @@
     <link rel="stylesheet" href="/style/VAE_C_media.css">
     <script src="/script/darkMode.js"></script>
     <script src="/script/addCards_curr.js"></script>
-    <script src="/script/addCards_prev.js"></script>
     <script src="/script/creatorView_filter.js"></script>
-
 </head>
 
 <body>
     <header>
         <div id="logo">
-            <a href="/index.html"><img id="logoimg" src="/images/logo.png" alt="Logo" /></a>
+            <a href=""><img id="logoimg" src="/images/logo.png" alt="Logo" /></a>
             <h1 id="logo-name">Tatawana</h1>
         </div>
-
-        
-
         <div>
             <img src="/images/moon.png" id="icon" />
-            <!-- <a href="/structure/profile.html"><img id="pfp" src="/images/pfp.png" alt="pfp" />
-            </a> -->
         </div>
+        <div><a href="./index.html" id="logout">logout</a></div>
     </header>
 
     <main>
@@ -53,13 +47,13 @@
                           </select>
                    
                 </form>
-                <a href="/structure/editCreateEvent.html">
+                <a href="/editCreateEvent.html">
                     <div class="create-button" id="create-button-under">
                         <button>Create</button>
                     </div>
                 </a>
             </div>
-            <a href="/structure/editCreateEvent.html">
+            <a href="/editCreateEvent.html">
                 <div class="create-button" id="create-button-inline">
                     <button>Create</button>
                 </div>
@@ -71,7 +65,7 @@
             <div class="card" id="create-event-card">
                 <div class="card-button">
                     <button class="add-button">
-                        <a href="/structure/editCreateEvent.html"><img src="/images/add_button.svg"  /></a>
+                        <a href="/editCreateEvent.html"><img src="/images/add_button.svg"  /></a>
                     </button>
                 </div>
 
@@ -79,59 +73,10 @@
                     <h1 id="event-name-card">CREATE AN EVENT</h1>
                 </div>
             </div>
-            <div class="card">
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image" />
-                </div>
-
-                <div class="title-card">
-                    <h1 id="event-name-card">first event</h1>
-                </div>
-
-                <div class="des-card">
-                    <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-                    </div>
-                    <div class="card-button">
-                        <button class="add-button">
-                            <a href="event.html"><img src="/images/delete_button.svg"  /></a>
-                        </button>
-                        <button class="add-button">
-                            <a href="/structure/editCreateEvent.html"><img src="/images/edit_button.svg"/></a>
-                        </button>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <h1 class="headers">Previous Events</h1>
         <div class="previous-event-section">
-
-            <div class="card">
-                <div class="img-card">
-                    <img id="event-img" src="/images/card-img-placeholder.png" alt="Event Image" />
-                </div>
-
-                <div class="title-card">
-                    <h1 id="event-name-card">first in prev</h1>
-                </div>
-
-                <div class="des-card">
-                    <div class="des">
-                        <h5 id="event-des">Description about the event</h5>
-                        <h5 id="event-date">Date: 31/12/2024</h5>
-                        <h5 id="event-time">Time: 3:30 pm</h5>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <button id="reviewBtn" onclick="redirectToReview()">Review</button>
-
-                </div>
-            </div>
-
         </div>
     </main>
 

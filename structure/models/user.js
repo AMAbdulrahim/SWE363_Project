@@ -37,7 +37,8 @@ const userSchema = new mongoose.Schema({
         type: String,
         enum: ['creator', 'volunteer'], // Ensures only 'creator' or 'volunteer' values are allowed
         default: 'volunteer' // Sets default value to 'volunteer'
-    }
+    },
+    events: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Event' }]
     // volunteeredIn: [{
     //     type: mongoose.Schema.Types.ObjectId,
     //     ref: 'events'
