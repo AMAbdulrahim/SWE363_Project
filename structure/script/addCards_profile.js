@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     var cardsSection = document.getElementById('cardsSectionV');
     var userDataJSON = sessionStorage.getItem('userData');
+    var completedEventsSpan = document.getElementById('completedHours'); 
+
+
     if (!userDataJSON) {
         console.error('User not authenticated');
         return;
@@ -27,9 +30,11 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log('Volunteered events retrieved from the server:', events);
             if (events.length === 0) {
                 cardsSection.innerHTML = '<p>No volunteered events found.</p>';
+                completedEventsSpan.textContent = '0';
                 return;
             }
-            console.log(events.length)
+            completedEventsSpan.textContent = events.length
+            
             events.forEach(event => {
                 var profileEventInfo = document.querySelector('.card-holder');
                 var card = document.createElement('div');

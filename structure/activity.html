@@ -172,49 +172,6 @@
         });
 });
 
-// function drawActivityChart(activityData) {
-//     google.charts.load('current', {'packages':['bar']});
-//     google.charts.setOnLoadCallback(() => {
-//         var data = new google.visualization.DataTable();
-
-        
-//         var data = new google.visualization.arrayToDataTable([
-//           ['Opening Move', 'Hours'],
-//           ["Jan", 5],
-//           ["Feb", 0],
-//           ["Mar", 0],
-//           ["Apr", 0],
-//           ['May', 9],
-//           ["Jan",0],
-//           ["Jul",0],
-//           ["Aug",0],
-//           ["Sep",0],
-//           ["Oct",0],
-//           ["Nov",0],
-//           ["Dec",0]
-//         ]);
-//         Object.keys(activityData).forEach(month => {
-//             data.addRow([month, activityData[month]]);
-//         });
-
-//         var options = {
-//             title: 'Activity Hours',
-//             width: 900,
-//             legend: { position: 'none' },
-//             chart: { title: 'Activity Hours'},
-//             bars: 'vertical',
-//             axes: {
-//                 x: {
-//                     0: { side: 'top', label: 'Months'} // Top x-axis.
-//                 }
-//             },
-//             bar: { groupWidth: "90%" }
-//         };
-
-//         var chart = new google.charts.Bar(document.getElementById('top_x_div'));
-//         chart.draw(data, options);
-//     });
-// }
 
 function drawActivityChart(activityData) {
     google.charts.load('current', { packages: ['bar'] });
