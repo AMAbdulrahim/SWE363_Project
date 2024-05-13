@@ -167,20 +167,7 @@ app.post('/submitEvent', upload.single('eventImage'), async (req, res) => {
     }
 });
 
-//get the evet for the user (creator)
-// app.get('/events/:userId', async (req, res) => {
-//     try {
-//         const userId = req.params.userId;
-//         const user = await User.findById(userId).populate('events').exec();
-//         if (!user) {
-//             return res.status(404).json({ message: 'User not found' });
-//         }
-//         res.json(user.events);
-//     } catch (error) {
-//         console.error("Error fetching events:", error);
-//         res.status(500).json({ message: 'Error fetching events', error: error.message });
-//     }
-// });
+
 
 // Update User Information
 app.post('/updateUser/:userId', async (req, res) => {
@@ -224,23 +211,21 @@ app.post('/updateUser/:userId', async (req, res) => {
 //delete the event 
 app.delete('/events/:eventId', async (req, res) => {
     try {
-        // const eventId = req.params.eventId;
-        console.log(req.params)
         const { eventId } = req.params;
+        const { userId } = req.body; // Assume userId is sent in the body of the request
+
+        // Delete the event
         const event = await Event.findByIdAndDelete(eventId);
         if (!event) {
             return res.status(404).send('Event not found');
         }
-        res.send({ message: 'Event deleted successfully' });
 
-        //delete fro the user events array
-        var userDataJSON = sessionStorage.getItem('userData');
-        if (userDataJSON) {
-            var userData = JSON.parse(userDataJSON);                        
-            var userId1 = userData._id;
+        // Remove the event from the user's events array
+        if (userId) {
+            await User.findByIdAndUpdate(userId, { $pull: { events: eventId } });
         }
-        // const userId = userId1 ;
-        // await User.findByIdAndUpdate(userId, { $pull: { events: eventId } });
+
+        res.send({ message: 'Event deleted successfully' });
     } catch (error) {
         console.error("Error deleting event:", error);
         res.status(500).json({ message: 'Failed to delete event', error: error.message });

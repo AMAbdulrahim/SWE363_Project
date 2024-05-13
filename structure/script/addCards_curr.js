@@ -94,16 +94,29 @@ function navigateToEvent(eventId) {
 }
 
 function deleteEvent(eventId, buttonElement) {
+    const userDataJSON = sessionStorage.getItem('userData');
+    if (!userDataJSON) {
+        alert('User not authenticated');
+        return;
+    }
+    const userData = JSON.parse(userDataJSON);
+    const userId = userData._id;
+
     fetch(`http://localhost:8000/events/${eventId}`, {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ userId })
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) throw new Error('Failed to delete the event');
+        return response.json();
+    })
     .then(data => {
-        if (data.message) {
-            alert(data.message);
-            // Remove the card element from the DOM
-            buttonElement.closest('.card').remove();
-        }
+        alert(data.message);
+        // Remove the card element from the DOM
+        buttonElement.closest('.card').remove();
     })
     .catch(error => {
         console.error('Error deleting event:', error);
@@ -112,7 +125,7 @@ function deleteEvent(eventId, buttonElement) {
 }
 
 function redirectToReview() {
-    window.location.href = "review.html"; // Ensure this is the correct link to your review page
+    window.location.href = "review.html"; 
 }
 
 
