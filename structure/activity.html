@@ -21,7 +21,7 @@
         </div>
         <div class="header-bar">
           <div>
-                <a href="/ViewAvailableEvents.html"><button id="header-events" class="header-bar-buttons">Events</button></a>
+                <a href="/ViewAvailableEvents.html" id="eventsLink"><button id="header-events" class="header-bar-buttons">Events</button></a>
           </div>
           <div>
                 <a href="/activity.html"><button id="header-activity" class="header-bar-buttons">Activity</button></a>
@@ -62,8 +62,23 @@
   <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawStuff);
+        document.addEventListener('DOMContentLoaded', function (){
+        var userDataJSON = sessionStorage.getItem('userData');
+        var eventAnchor = document.getElementById('eventsLink');
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawStuff);
+
+        if (!userDataJSON) {
+            console.error('User not authenticated');
+            return;
+        }
+
+        var userData = JSON.parse(userDataJSON);
+        var userId = userData._id;
+        if(userData.userType ==="creator"){
+            console.log(userData.userType)
+            eventAnchor.setAttribute('href', '/creator_viewAvailableEvents.html');
+        }
 
       function drawStuff() {
         var data = new google.visualization.arrayToDataTable([
@@ -99,6 +114,7 @@
         var chart = new google.charts.Bar(document.getElementById('top_x_div'));
         chart.draw(data, options);
       };
+    });
     </script>
   </head>
   <body>

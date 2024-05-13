@@ -27,7 +27,7 @@ const event = require("./structure/models/event");
 
 //return first page 
 app.get('/', function(req, res) {
-    res.redirect('/login.html'); // Assuming login.html is in the 'structure' directory and accessible
+    res.redirect('/login.html');
 });
 
 // Define storage for the uploaded images
@@ -215,7 +215,7 @@ app.post('/updateUser/:userId', async (req, res) => {
 app.delete('/events/:eventId', async (req, res) => {
     try {
         const { eventId } = req.params;
-        const { userId } = req.body; // Assume userId is sent in the body of the request
+        const { userId } = req.body; 
 
         // Delete the event
         const event = await Event.findByIdAndDelete(eventId);

@@ -22,7 +22,7 @@
         </div>
         <div class="header-bar">
           <div>
-                <a href="/ViewAvailableEvents.html"><button id="header-events" class="header-bar-buttons">Events</button></a>
+                <a href="/ViewAvailableEvents.html" id="completedHours"><button id="header-events" class="header-bar-buttons">Events</button></a>
           </div>
           <div>
                 <a href="/activity.html"><button id="header-activity" class="header-bar-buttons">Activity</button></a>
@@ -65,6 +65,21 @@
 
     <script>
 document.addEventListener('DOMContentLoaded', function() {
+    var userDataJSON = sessionStorage.getItem('userData');
+    var completedEventsSpan = document.getElementById('completedHours'); 
+
+    if (!userDataJSON) {
+        console.error('User not authenticated');
+        return;
+    }
+    var userData = JSON.parse(userDataJSON);
+    var userId = userData._id;
+
+    //check the user type and then mosify the event page link 
+    if(userData.userType ==="creator"){
+        eventAnchor.setAttribute('href', '/creator_viewAvailableEvents.html');
+    }
+
     //log out 
     const logoutLink = document.getElementById('logout');
     logoutLink.addEventListener('click', function(event) {
