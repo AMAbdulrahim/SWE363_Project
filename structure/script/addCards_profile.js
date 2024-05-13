@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var cardsSection = document.getElementById('cardsSectionV');
     var userDataJSON = sessionStorage.getItem('userData');
     var completedEventsSpan = document.getElementById('completedHours'); 
-
+    var eventAnchor = document.getElementById('eventsLink')
 
     if (!userDataJSON) {
         console.error('User not authenticated');
@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var userId = userData._id;
 
         const logoutLink = document.getElementById('logout');
-
         logoutLink.addEventListener('click', function(event) {
             event.preventDefault(); // Prevent the default link behavior
 
@@ -22,6 +21,12 @@ document.addEventListener('DOMContentLoaded', function () {
             // Redirect to the homepage
             window.location.href = './index.html';
         });
+
+
+    //check the user type and then mosify the event page link 
+    if(userData.userType ==="creator"){
+        eventAnchor.setAttribute('href', '/creator_viewAvailableEvents.html');
+    }
 
     // Fetch events from the server that the user has volunteered for
     fetch(`http://localhost:8000/users/${userId}/events`)
@@ -33,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 completedEventsSpan.textContent = '0';
                 return;
             }
+            //update the user completed hours 
             completedEventsSpan.textContent = events.length
             
             events.forEach(event => {
