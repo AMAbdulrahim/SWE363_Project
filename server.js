@@ -22,7 +22,8 @@ app.use(express.static('structure'));
 
 // Define Models
 const User = require("./structure/models/user");
-const Event = require("./structure/models/event")
+const Event = require("./structure/models/event");
+const event = require("./structure/models/event");
 
 //return first page 
 app.get('/', function(req, res) {
@@ -132,7 +133,8 @@ app.post('/submitEvent', upload.single('eventImage'), async (req, res) => {
         const lastEvent = await Event.findOne().sort({eventId: -1});
         const nextEventId = lastEvent ? lastEvent.eventId + 1 : 1; // Start from 1 if no events are present
         const creatorEmail = req.body.creatorEmail;
-        console.log(creatorEmail)
+        const hours = req.body.eventHours
+        console.log(hours)
 
         const creator = await User.findOne({ email: creatorEmail });
         if (!creator) {
@@ -149,7 +151,8 @@ app.post('/submitEvent', upload.single('eventImage'), async (req, res) => {
             eventLoc: req.body.eventLoc,
             eventId: nextEventId, // Assign the calculated eventId
             creatoremail:creatorEmail,
-            creator: creator
+            creator: creator,
+            hours: hours
         });
 
         // Save the new event to the database
@@ -310,28 +313,31 @@ app.post('/events/:eventId/volunteers', async (req, res) => {
 app.get('/user/:userId/monthlyActivity', async (req, res) => {
     try {
         const { userId } = req.params;
-        const user = await User.findById(userId).populate({
-            path: 'events',
-            select: 'eventDate hours',  // Ensure 'hours' is stored in each event document
-            match: { eventDate: { $exists: true } }
-        });
-
+        const user = await User.findById(userId).populate('events');
         if (!user) {
             return res.status(404).send('User not found');
         }
 
-        let monthlyActivity = {};
+        // Prepare data for monthly activity
+        let monthlyActivity = {
+            "Jan": 0, "Feb": 0, "Mar": 0, "Apr": 0, "May": 0, "Jun": 0,
+            "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0
+        };
+
         user.events.forEach(event => {
-            const month = event.eventDate.toLocaleString('default', { month: 'short' });
+            let month = new Date(event.eventDate).toLocaleString('en-us', { month: 'short' });
             monthlyActivity[month] = (monthlyActivity[month] || 0) + event.hours;
         });
 
-        res.json(monthlyActivity);
+        const totalEvents = user.events.length;
+
+        res.json({ monthlyActivity, totalEvents });
     } catch (error) {
-        console.error("Error fetching user's monthly activity:", error);
+        console.error('Failed to fetch user monthly activity:', error);
         res.status(500).send('Internal Server Error');
     }
 });
+
 
 
 

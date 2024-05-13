@@ -54,7 +54,7 @@
                 </h3>
             </div>
             <div class="profile-hours">
-                <h3>Completed Hours: <span id="completedHours">00</span></h3>
+                <h3>Completed Events: <span id="completedHours">00</span></h3>
             </div>
         </div>
         <div class="graph">
@@ -172,49 +172,78 @@
         });
 });
 
-function drawActivityChart(activityData) {
-    google.charts.load('current', {'packages':['bar']});
-    google.charts.setOnLoadCallback(() => {
-        var data = new google.visualization.DataTable();
+// function drawActivityChart(activityData) {
+//     google.charts.load('current', {'packages':['bar']});
+//     google.charts.setOnLoadCallback(() => {
+//         var data = new google.visualization.DataTable();
 
         
+//         var data = new google.visualization.arrayToDataTable([
+//           ['Opening Move', 'Hours'],
+//           ["Jan", 5],
+//           ["Feb", 0],
+//           ["Mar", 0],
+//           ["Apr", 0],
+//           ['May', 9],
+//           ["Jan",0],
+//           ["Jul",0],
+//           ["Aug",0],
+//           ["Sep",0],
+//           ["Oct",0],
+//           ["Nov",0],
+//           ["Dec",0]
+//         ]);
+//         Object.keys(activityData).forEach(month => {
+//             data.addRow([month, activityData[month]]);
+//         });
+
+//         var options = {
+//             title: 'Activity Hours',
+//             width: 900,
+//             legend: { position: 'none' },
+//             chart: { title: 'Activity Hours'},
+//             bars: 'vertical',
+//             axes: {
+//                 x: {
+//                     0: { side: 'top', label: 'Months'} // Top x-axis.
+//                 }
+//             },
+//             bar: { groupWidth: "90%" }
+//         };
+
+//         var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+//         chart.draw(data, options);
+//     });
+// }
+
+function drawActivityChart(activityData) {
+    google.charts.load('current', { packages: ['bar'] });
+    google.charts.setOnLoadCallback(() => {
         var data = new google.visualization.arrayToDataTable([
-          ['Opening Move', 'Hours'],
-          ["Jan", 0],
-          ["Feb", 0],
-          ["Mar", 0],
-          ["Apr", 0],
-          ['may', 0],
-          ["Jan",0],
-          ["Jul",0],
-          ["Aug",0],
-          ["Sep",0],
-          ["Oct",0],
-          ["Nov",0],
-          ["Dec",0]
+            ['Month', 'Hours'],
+            ...Object.entries(activityData.monthlyActivity).map(([month, hours]) => [month, hours])
         ]);
-        Object.keys(activityData).forEach(month => {
-            data.addRow([month, activityData[month]]);
-        });
 
         var options = {
             title: 'Activity Hours',
             width: 900,
             legend: { position: 'none' },
-            chart: { title: 'Activity Hours'},
+            chart: { title: 'Activity Hours' },
             bars: 'vertical',
             axes: {
-                x: {
-                    0: { side: 'top', label: 'Months'} // Top x-axis.
-                }
+                x: { 0: { side: 'top', label: 'Months' } }
             },
             bar: { groupWidth: "90%" }
         };
 
         var chart = new google.charts.Bar(document.getElementById('top_x_div'));
         chart.draw(data, options);
+
+        // Update the completed events count
+        document.getElementById('completedHours').textContent = activityData.totalEvents;
     });
 }
+
 
 
   </script>
