@@ -65,7 +65,6 @@ fetch('http://localhost:8000/user', {
 })
 .catch(error => {
     console.error('Error saving user data:', error);
-    alert('Error occurred while saving user data. Please try again later.'); // Generic error message
 });
 
 
