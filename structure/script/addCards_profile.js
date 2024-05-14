@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
                 <div class="card-des">
                             <div>
-                                <h5 id="event-date">Date: ${new Date(event.eventDate).toLocaleDateString()}</h5>
-                                <h5 id="event-time">Time: ${event.eventTime}</h5>
+                                <h5 id="event-date">${new Date(event.eventDate).toLocaleDateString()}</h5>
+                                <h5 id="event-time">${event.eventTime}</h5>
                             </div>
                             <div class="review-card">
                                 <button id="reviewBtn" onclick="redirectToReview()">Review</button>

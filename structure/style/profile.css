@@ -205,7 +205,7 @@ footer {
 
 .card-holder{
     scrollbar-width: auto;
-}
+overflow-x: hidden;}
 
 .card-holder::-webkit-scrollbar {
     width: 20px;               /* width of the entire scrollbar */
@@ -218,7 +218,26 @@ footer {
     border-radius: 20px;       /* roundness of the scroll thumb */
     border: 3px solid var(--color-card);  /* creates padding around scroll thumb */
 }
+.des{
+    overflow: hidden;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
 
+.card-des{
+    gap: 20px;
+    max-width: 90px;
+}
+#event-des{
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    white-space: normal; 
+}
+#event-name-card{
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
 
 
 @media screen and (max-width: 915px) {
