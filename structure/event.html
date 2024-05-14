@@ -37,6 +37,11 @@
                         <th>Time</th>
                         <td id="eventTime">11:30 PM</td>
                     </tr>
+
+                    <tr>
+                        <th>Contact</th>
+                        <td id="eventEmail">example@gmail.com</td>
+                    </tr>
                     <tr>
                     <tr>
                         <th>City</th>
@@ -55,7 +60,7 @@
                 <button id="volunteerBtn" class="volunteer-button" style="display: none;">Volunteer</button>
             </div>
             <div class="right-section">
-                <img src="/images/cleaning.png" alt="rightImage">
+                <img id="eventImage" src="/images/cleaning.png" alt="Event Image">
             </div>
         </div>
         <!-- </html> -->
@@ -77,10 +82,9 @@
 
             const viewMapBtn = document.getElementById('viewMapBtn');
             viewMapBtn.addEventListener('click', function (event) {
-                // Get the Google Maps link from the event details
+    
                 const googleMapsLink = document.getElementById('eventLocation').textContent.trim();
 
-                // Open the Google Maps link in a new tab
                 window.open(googleMapsLink, '_blank');
             });
 
@@ -121,13 +125,25 @@
                         document.getElementById('eventDescription').textContent = event.eventDes;
                         document.getElementById('eventDate').textContent = new Date(event.eventDate).toLocaleDateString();
                         document.getElementById('eventTime').textContent = event.eventTime;
-                        document.getElementById('eventCity').textContent = event.eventCity; 
+                        document.getElementById('eventEmail').textContent = event.eventEmail;
+                        document.getElementById('eventCity').textContent = event.eventCity;
+                        if (event.eventImage) {
+        
+                            const imagePath = '/' + event.eventImage.split('\\').join('/');
+
+                            document.getElementById('eventImage').src = imagePath;
+                        } else {
+            
+                            document.getElementById('eventImage').src = '/images/cleaning.png';
+                        }
                         if (!event.eventLoc) {
                             document.getElementById('eventLocation').textContent = "No map location specified";
                         } else {
                             document.getElementById('eventLocation').innerHTML = `<a href="${event.eventLoc}" target="_blank"><button>View on Map</button></a>`;
                         }
-                        //document.getElementById('eventImage').src = event.eventImage || '/images/default-event-image.png';
+
+
+
                     })
                     .catch(error => {
                         console.error('Error:', error);
@@ -147,14 +163,22 @@
                         document.getElementById('eventDescription').textContent = event.eventDes;
                         document.getElementById('eventDate').textContent = new Date(event.eventDate).toLocaleDateString();
                         document.getElementById('eventTime').textContent = event.eventTime;
-                        document.getElementById('eventCity').textContent = event.eventCity; 
+                        document.getElementById('eventCity').textContent = event.eventCity;
+                        if (event.eventImage) {
+      
+                            const imagePath = '/' + event.eventImage.split('\\').join('/');
+     
+                            document.getElementById('eventImage').src = imagePath;
+                        } else {
+          
+                            document.getElementById('eventImage').src = '/images/cleaning.png';
+                        }
                         if (!event.eventLoc) {
                             document.getElementById('eventLocation').textContent = "No map location specified";
                         } else {
                             document.getElementById('eventLocation').innerHTML = `<a href="${event.eventLoc}" target="_blank"><button>View on Map</button></a>`;
                         }
 
-                        // document.getElementById('eventImage').src = event.eventImage || '/images/default-event-image.png';
 
                         const volunteerBtn = document.getElementById('volunteerBtn');
                         volunteerBtn.style.display = 'block';

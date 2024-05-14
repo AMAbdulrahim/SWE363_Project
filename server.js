@@ -19,41 +19,46 @@ app.use(cors()); // Enable CORS
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('structure'));
+app.use('/eventImgsUpload', express.static('eventImgsUpload'));
 
-// Define Models
 const User = require("./structure/models/user");
 const Event = require("./structure/models/event");
 const event = require("./structure/models/event");
 
-//return first page 
+
 app.get('/', function(req, res) {
     res.redirect('/login.html');
 });
 
-// Define storage for the uploaded images
+
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
-        cb(null, './eventImgsUpload/'); // Set destination folder for uploaded files
+        cb(null, './eventImgsUpload/'); 
     },
     filename: function(req, file, cb) {
-        cb(null, Date.now() + path.extname(file.originalname)); // Set file name with timestamp
+        cb(null, Date.now() + path.extname(file.originalname)); 
     }
 });
 
 // Initialize multer with defined storage
+
 const upload = multer({ storage: storage });
 
 
-// Define User Route
+app.post('/upload', upload.single('image'), (req, res) => {
+
+    res.send('File uploaded successfully');
+});
+
+
+
 app.post('/user', async (req, res) => {
     try {
-        // Check if email already exists
         const existingUser = await User.findOne({ email: req.body.email });
         if (existingUser) {
             return res.status(400).json({ message: 'Email already exists' });
         }
 
-        // Hash the password
         const hashedPassword = await bcrypt.hash(req.body.password, 10); // 10 is the saltRounds parameter
 
         // If email is unique, create a new user with hashed password
@@ -147,6 +152,7 @@ app.post('/submitEvent', upload.single('eventImage'), async (req, res) => {
             eventDes: req.body.eventDes,
             eventCity: req.body.eventCity,
             eventDate: req.body.eventDate,
+            eventEmail: req.body.eventEmail,
             eventTime: req.body.eventTime,
             eventImage: req.file ? req.file.path : '', // Store the path to the uploaded image file, if exists
             eventLoc: req.body.eventLoc,

@@ -31,7 +31,7 @@
             
 
             <!-- <form action="http://localhost:8000/submitEvent" method="POST" onsubmit="return validateForm()"> -->
-            <form method="POST" onsubmit="return submitEventForm()">
+            <form method="POST" enctype="multipart/form-data" onsubmit="return submitEventForm()">
                 <div class="event-form">
                     <label for="event-name">Event:</label>
                     <input type="text" id="event-name" name="eventName" placeholder="Enter event's name">
@@ -100,18 +100,18 @@
             const logoutLink = document.getElementById('logout');
 
             logoutLink.addEventListener('click', function(event) {
-                event.preventDefault(); // Prevent the default link behavior
+                event.preventDefault(); 
 
                 console.log("reached")
                 sessionStorage.clear();
 
-                // Redirect to the homepage
                 window.location.href = './index.html';
             });
         });
         function submitEventForm() {
             event.preventDefault();
             var userDataJSON = sessionStorage.getItem('userData');
+            
             if (userDataJSON) {
                 var userData = JSON.parse(userDataJSON);                        
                 var profileEmailElement = userData.email;
@@ -130,10 +130,12 @@
                     alert('Failed to submit event. Please try again.');
                 }
             })
+            
             .catch(error => {
                 console.error('Error submitting event:', error);
                 alert('Error in event submission: ' + error.message);
             });
+            
         
             return false; 
 
