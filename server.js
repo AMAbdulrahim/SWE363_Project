@@ -145,6 +145,7 @@ app.post('/submitEvent', upload.single('eventImage'), async (req, res) => {
         const newEvent = new Event({
             eventName: req.body.eventName,
             eventDes: req.body.eventDes,
+            eventCity: req.body.eventCity,
             eventDate: req.body.eventDate,
             eventTime: req.body.eventTime,
             eventImage: req.file ? req.file.path : '', // Store the path to the uploaded image file, if exists

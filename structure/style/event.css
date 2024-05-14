@@ -13,13 +13,16 @@
     --color-event-name: #333;
     --color-event-des: #666;
     --color-event-info: #f2f2f2;
-    --color-event-city: #2200ff;
+    --color-event-city: #00ff5e;
+    --color-white-text: #fff;
 
 
 }
 a {
-    color: var(--color-event-city); /* Change this color to the desired color */
-}
+    text-decoration: none;
+    color: var(--color-white-text);
+  }
+  
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -65,10 +68,16 @@ body {
 }
 
 .Description {
-    font-size: 22px;
-    color: var(--color-event-name);
-    margin-bottom: 5px;
-    margin-left: 10px;
+    font-size: 18px;
+    color: var(--color-event-des);
+    margin-bottom: 20px;
+    margin-right: 20px;
+    max-height: 100px;
+    overflow-y: auto;
+    word-wrap: break-word;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 4px;
     margin-left: 40px;
 
 }
@@ -101,6 +110,7 @@ body {
     margin-bottom: 20px;
     margin-top: 90px;
 }
+
 
 .volunteer-button:hover {
     background-color: var(--color-card-hover);

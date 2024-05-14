@@ -16,6 +16,11 @@
   --color-event-from-border: #ccc;
   --color-ECE-label: #210124;
   --color-ECE-imagePreview-border:#ccc;
+  --color-white-text: #fff;
+}
+a {
+  text-decoration: none;
+  color: var(--color-white-text);
 }
 
 
