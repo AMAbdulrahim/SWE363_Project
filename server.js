@@ -381,6 +381,7 @@ app.post('/events/:eventId/reviews', async (req, res) => {
     }
 });
 
+// Assuming your server is set up with Express and uses Mongoose to interact with MongoDB
 app.get('/users/:userId', async (req, res) => {
     try {
         const user = await User.findById(req.params.userId).select('name'); // Only fetch the user's name
