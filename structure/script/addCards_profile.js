@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
         eventAnchor.setAttribute('href', '/creator_viewAvailableEvents.html');
     }
 
+    var eventCounter = Array.from({ length: 12 }, () => 0); // Initialize to an array of 12 zeros
+
     // Fetch events from the server that the user has volunteered for
     fetch(`http://localhost:8000/users/${userId}/events`)
         .then(response => response.json())
@@ -38,6 +40,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 completedEventsSpan.textContent = '0';
                 return;
             }
+            
+            // Loop through each event to count events for each month
+            events.forEach(event => {
+                // Extract month from event date and increment the corresponding counter
+                var eventDate = new Date(event.eventDate);
+                var monthIndex = eventDate.getMonth();
+                eventCounter[monthIndex]++;
+            });
+            sessionStorage.setItem('eventCounter', JSON.stringify(eventCounter));
+
+            // Log the event counts for each month
+            console.log('Event counter for each month:', eventCounter);
+
             //update the user completed hours 
             completedEventsSpan.textContent = events.length
             

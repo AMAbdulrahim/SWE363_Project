@@ -54,12 +54,29 @@
                 </h3>
             </div>
             <div class="profile-hours">
-                <h3>Completed Events: <span id="completedHours">00</span></h3>
+                <h3>Completed Events: <span id="completedEvents">00</span></h3>
             </div>
         </div>
         <div class="graph">
             <html>
   <head>
+    <script>
+        function calculateTotalEvents(eventCounter) {
+        let totalEvents = 0;
+        for (let i = 0; i < eventCounter.length; i++) {
+            totalEvents += eventCounter[i];
+        }
+        return totalEvents;
+    }
+
+    const eventCounter = JSON.parse(sessionStorage.getItem('eventCounter'));
+    const totalEvents = calculateTotalEvents(eventCounter);
+
+    // Update the completed hours span to display the total events
+    const completedEventsSpan = document.getElementById('completedEvents');
+    completedEventsSpan.textContent = totalEvents;
+    </script>
+    
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function (){
@@ -80,39 +97,48 @@
             eventAnchor.setAttribute('href', '/creator_viewAvailableEvents.html');
         }
 
-      function drawStuff() {
-        var data = new google.visualization.arrayToDataTable([
-          ['Opening Move', 'Hours'],
-          ["Jan", 12],
-          ["Feb", 9],
-          ["Mar", 8],
-          ["Apr", 14],
-          ['may', 3],
-          ["Jan",7],
-          ["Jul",6],
-          ["Aug",5],
-          ["Sep",9],
-          ["Oct",17],
-          ["Nov",4],
-          ["Dec",12]
-        ]);
+        function drawStuff() {
+            // Sample event counter data for testing
+            
+            var eventCounter = JSON.parse(sessionStorage.getItem('eventCounter'));
+            
+            var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            var eventCounter1 = [];
 
-        var options = {
-          title: 'Activity Hours',
-          width: 900,
-          legend: { position: 'none' },
-          chart: { title: 'Activity Hours'},
-          bars: 'virticall', // Required for Material Bar Charts.
-          axes: {
-            x: {
-              0: { side: 'top', label: 'Months'} // Top x-axis.
+            for (var i = 0; i < months.length; i++) {
+                eventCounter1[i]=eventCounter[i]
             }
-          },
-          bar: { groupWidth: "2px" }
-        };
+            console.log(eventCounter1)
 
-        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
-        chart.draw(data, options);
+
+        
+            var data = new google.visualization.DataTable();
+
+            data.addColumn('string', 'Month');
+            data.addColumn('number', 'Event Count');
+        
+            // Populate data table with eventCounter values
+            for (var i = 0; i < months.length; i++) {
+                data.addRow([months[i], eventCounter1[i]]);
+            }
+        
+            var options = {
+                title: 'Event Count by Month',
+                width: 900,
+                height: 500, // Set the height of the chart
+                legend: { position: 'none' },
+                chart: { title: 'Event Count by Month' },
+                bars: 'vertical',
+                axes: {
+                    x: {
+                        0: { side: 'top', label: 'Months' } // Top x-axis.
+                    }
+                },
+                bar: { groupWidth: "2px" }
+            };
+        
+            var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+            chart.draw(data, google.charts.Bar.convertOptions(options)); // Convert options to Material bar chart options
       };
     });
     </script>
@@ -159,63 +185,7 @@
       function redirectToReview() {
           window.location.href = "review.html";
       }
-      document.addEventListener('DOMContentLoaded', function() {
-        var userDataJSON = sessionStorage.getItem('userData');
-    if (userDataJSON) {
-        var userData = JSON.parse(userDataJSON);                        
-        var userId1 = userData._id;
-    }
-    const userId = userId1;
-
-    if (!userId) {
-        alert('User not authenticated');
-        return;
-    }
-
-    fetch(`http://localhost:8000/user/${userId}/monthlyActivity`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Failed to fetch monthly activity');
-            }
-            return response.json();
-        })
-        .then(activityData => {
-            drawActivityChart(activityData);
-        })
-        .catch(error => {
-            console.error('Error fetching monthly activity:', error);
-            alert('Failed to load activity data');
-        });
-});
-
-
-function drawActivityChart(activityData) {
-    google.charts.load('current', { packages: ['bar'] });
-    google.charts.setOnLoadCallback(() => {
-        var data = new google.visualization.arrayToDataTable([
-            ['Month', 'Hours'],
-            ...Object.entries(activityData.monthlyActivity).map(([month, hours]) => [month, hours])
-        ]);
-
-        var options = {
-            title: 'Activity Hours',
-            width: 900,
-            legend: { position: 'none' },
-            chart: { title: 'Activity Hours' },
-            bars: 'vertical',
-            axes: {
-                x: { 0: { side: 'top', label: 'Months' } }
-            },
-            bar: { groupWidth: "90%" }
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
-        chart.draw(data, options);
-
-        // Update the completed events count
-        document.getElementById('completedHours').textContent = activityData.totalEvents;
-    });
-}
+   
 
 
 

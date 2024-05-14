@@ -48,8 +48,8 @@ const eventSchema = new mongoose.Schema({
     //
     
     activity:{
-        moth: String,
-        hours: Number
+        month: String,
+        numberOfEvents: Number
     }
 });
 
