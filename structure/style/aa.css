@@ -1,0 +1,25 @@
+.footer-contact {
+    text-align: center; /* Centers the content in the footer */
+    padding: 20px;
+    background-color: #f1f1f1; /* Light grey background for the footer */
+}
+
+.footer-contact img {
+    width: 40px; /* Ensures all icons are uniformly sized */
+    margin: 0 10px; /* Adds horizontal space between icons */
+    vertical-align: middle; /* Aligns icons vertically with the text */
+}
+
+.scrollup {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #ddd; /* Subtle contrast from main footer background */
+    color: #333;
+    text-decoration: none;
+}
+
+.scrollup:hover {
+    background-color: #ccc; /* Slightly darker on hover */
+}

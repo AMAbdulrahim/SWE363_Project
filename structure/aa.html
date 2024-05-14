@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/VAE.css">
+    <link rel="stylesheet" href="/style/HeaderFooter.css">
+    <link rel="stylesheet" href="/style/profile.css">
+    <link rel="stylesheet" href="/structure/style/aa.css">
+    <script src="/script/addCards_profile.js"></script>
+    <script src="/script/pageChange.js"></script>
+    <script src="/script/darkMode.js"></script>
+    <script src="/script/scrollUp.js"></script>
+    <script src="/script/st.js"></script> <!--for the scroll up button-->
+    <script src="/script/userData.js"></script>
+    <title>Profile</title>
+</head>
+
+<body>
+
+<header>
+    <div style="display:flex">
+        <a href="/profile.html"><img id="pfp" src="/images/pfp.png" alt="pfp"> </a>
+        <h1 id="logo-name">hi, <span id="profileName">Fname</span></h1>
+    </div>
+</header>
+
+<main>
+    <section class="review-section">
+        <h2>Event Feedback</h2>
+        <form id="reviewForm">
+            <label for="eventName">Event Name:</label>
+            <input type="text" id="eventName" name="eventName" required>
+
+            <label for="rating">Rating:</label>
+            <select id="rating" name="rating" required>
+                <option value="">--Please choose an option--</option>
+                <option value="5">Excellent</option>
+                <option value="4">Very Good</option>
+                <option value="3">Good</option>
+                <option value="2">Fair</option>
+                <option value="1">Poor</option>
+            </select>
+
+            <label for="review">Review:</label>
+            <textarea id="review" name="review" rows="4" required></textarea>
+
+            <button type="submit">Submit Review</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-contact">
+        <label id="contact">contact us</label> <!-- Removed the for attribute -->
+        <a href="mailto:swe363.26.project@gmail.com" target="_blank"><img src="/images/email_icon.png"></a>
+        <a href="https://www.instagram.com/" target="_blank"><img src="/images/instagram_icon.png"></a>
+        <a href="https://twitter.com/" target="_blank"><img src="/images/twitter_icon.png"></a><br>
+    </div>
+    <a href="#" class="scrollup">Scroll</a>
+</footer>
+<script>
+document.getElementById('reviewForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var eventName = document.getElementById('eventName').value;
+    var rating = document.getElementById('rating').value;
+    var review = document.getElementById('review').value;
+    if (!eventName || !rating || !review) {
+        alert('Please fill in all fields');
+    } else {
+        console.log("Submitted Review:", eventName, rating, review);
+        alert('Thank you for your feedback!');
+        this.reset();  // Reset form after submission
+    }
+});
+</script>
+
+</body>
+</html>
