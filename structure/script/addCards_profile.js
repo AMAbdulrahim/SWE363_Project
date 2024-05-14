@@ -62,25 +62,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 card.classList.add('card');
                 var eventDate = new Date(event.eventDate);
                 var currentDate = new Date();
-            //     card.innerHTML = `
-            //     <div class="img-card">
-            //         <img id="event-img" src="${event.eventImage || '/images/card-img-placeholder.png'}" alt="Event Image">
-            //     </div>
-            //     <div class="des">
-            //         <h1 id="event-name-card">${event.eventName}</h1>
-            //         <h5 id="event-des">${event.eventDes}</h5>
-            //     </div>
-            //     <div class="card-des">
-            //                 <div>
-            //                     <h5 id="event-date">${new Date(event.eventDate).toLocaleDateString()}</h5>
-            //                     <h5 id="event-time">${event.eventTime}</h5>
-            //                 </div>
-            //                 <div class="review-card">
-            //                     <button id="reviewBtn" onclick="redirectToReview()">Review</button>
-            //                 </div>
-            //             </div>
-    
-            // `;
                 card.innerHTML = `
                     <div class="img-card">
                     <a href="event.html?eventId=${event._id}"><img id="event-img" src="${event.eventImage || '/images/card-img-placeholder.png'}" alt="Event Image"></a>
@@ -100,10 +81,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Add the review button only if the event date is in the past
                 if (eventDate < currentDate) {
                     if(userData.userType ==="creator"){
-                        card.innerHTML += `<button id="reviewBtn" onclick="redirectToReview()">Reviews</button>`;
+                        card.innerHTML += ` <a href="CreatorReview.html?eventId=${event._id}"><button id="reviewBtn">Reviews</button></a>`;
                     }
                     else{
-                        card.innerHTML += `<button id="reviewBtn" onclick="redirectToReview()">Review</button>`;
+                        card.innerHTML += ` <a href="review.html?eventId=${event._id}"><button id="reviewBtn">Review</button></a>`;
                     }
                 }
                 card.innerHTML += `</div></div>`;
@@ -114,9 +95,6 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error('Error fetching volunteered events:', error);
         });
 
-        function redirectToEvent(){
-            window.location.href = 'event.html';
-        }
 });
 
 

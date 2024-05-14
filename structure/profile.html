@@ -14,7 +14,6 @@
     <script src="/script/userData.js"></script>
     <title>Profile</title>
 </head>
-
 <body>
     <style>
         .des{
@@ -117,8 +116,8 @@
     </footer>
     
     <script>
-        function redirectToReview() {
-            window.location.href = "review.html";
+        function redirectToReview(id) {
+            window.location.href = `review.html??eventId=${id}`;
         }
     </script>
 

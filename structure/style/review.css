@@ -166,28 +166,6 @@ main>div>div {
     width: 40vw;
 
 }
-.reviews-container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-}
-
-.review-card {
-    background-color: #31A57A;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-.review-rating, .review-text {
-    margin: 5px 0;
-}
-
-.review-author {
-    font-weight: bold;
-    color: #333;
-}
 
 
 @media screen and (max-width: 700px) {
@@ -217,4 +195,60 @@ main>div>div {
     
 
 
+}
+.review-section {
+    background-color: var(--color-white-text);
+    padding: 20px;
+    margin: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--color-shaddow);
+}
+
+.review-section h2 {
+    color: var(--color-event-name);
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--color-black-text);
+}
+
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.stars {
+    display: inline-block;
+}
+
+.star {
+    cursor: pointer;
+    font-size: 24px;
+    color: #ccc;
+}
+
+.star:hover,
+.star.hover,
+.star.selected {
+    color: gold;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--color-card);
+    color: var(--color-white-text);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-button:hover {
+    background-color: var(--color-card-hover);
 }

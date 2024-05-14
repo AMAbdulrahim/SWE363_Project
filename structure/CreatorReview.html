@@ -1,0 +1,132 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <link rel="stylesheet" href="/style/HeaderFooter.css">
+    <link rel="stylesheet" href="/style/event.css">
+    <script src="/script/darkMode.js"></script>
+    <script src="/script/st.js"></script>
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <a href="javascript:history.back()"><img id="logoimg" src="/images/back.png" alt="Logo"></a>
+            <h1 id="logo-name">Events</h1>
+        </div>
+        <img src="/images/moon.png" id="icon">
+        <div>
+            <a href="/profile.html"><img id="pfp" src="/images/pfp.png" alt="pfp"> </a>
+        </div>
+        <div><a href="./index.html" id="logout">logout</a></div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="left-section">
+                <div class="event-name" id="eventName">Event Name</div>
+                <div class="Description" id="eventDescription">Description</div>
+                <table id="event-info">
+                    <tr>
+                        <th>Date</th>
+                        <td id="eventDate">1/1/2020</td>
+                    </tr>
+                    <tr>
+                        <th>Time</th>
+                        <td id="eventTime">11:30 PM</td>
+                    </tr>
+                    <tr>
+                    <tr>
+                        <th>City</th>
+                        <td id="eventCity">
+                            City 1
+                        </td>
+                    <tr>
+                        <th>Location</th>
+                        <td id="eventLocation">
+                            <button id="viewMapBtn">View on Map</button>
+                        </td>
+
+                    </tr>
+                </table>
+
+               
+
+
+            </div>
+            <div class="right-section">
+                <div class="reviews-section">
+                    
+                    <div id="reviewsContainer" class="reviews-container">
+                        <h2>Event Reviews</h2>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+    </main>
+    <footer>
+        <code>
+        <a href="#" class="scrollup">Scroll</a>
+    </code>
+        <div class="footer-contact">
+            <label id="contact" for="">contact us</label>
+            <a href="mailto:swe363.26.project@gmail.com" target="_blank"><img src="/images/email_icon.png"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="/images/instagram_icon.png"></a>
+            <a href="https://twitter.com/" target="_blank"><img src="/images/twitter_icon.png"></a><br>
+        </div>
+    </footer>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const eventId = new URLSearchParams(window.location.search).get('eventId');
+
+    fetch(`http://localhost:8000/events/${eventId}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch event');
+            }
+            return response.json();
+        })
+        .then(async event => {
+            document.getElementById('eventName').textContent = event.eventName;
+            document.getElementById('eventDescription').textContent = event.eventDes;
+            document.getElementById('eventDate').textContent = new Date(event.eventDate).toLocaleDateString();
+            document.getElementById('eventTime').textContent = event.eventTime;
+            document.getElementById('eventCity').textContent = event.eventCity;
+
+            const reviewsContainer = document.getElementById('reviewsContainer');
+            if(event.reviews.length === 0){
+                reviewsContainer.innerHTML = `<div class="review-card">There are no reviews yet.</div>`;
+            } else {
+                for (let review of event.reviews) {
+                    // Fetch the user name for each review
+                    const userResponse = await fetch(`http://localhost:8000/users/${review.userId}`);
+                    const user = await userResponse.json();
+                    const userName = user.name || 'Anonymous'; // Fallback if user name is not available
+
+                    const reviewCard = document.createElement('div');
+                    reviewCard.className = 'review-card';
+                    reviewCard.innerHTML = `
+                        <div class="review-author">Reviewer: ${userName}</div>
+                        <div class="review-rating">Rating: ${review.rating}</div>
+                        <div class="review-text">${review.text}</div>
+                    `;
+                    reviewsContainer.appendChild(reviewCard);
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Failed to load event details');
+        });
+});
+
+
+
+    </script>
+</body>
+
+</html>
