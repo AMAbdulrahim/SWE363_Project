@@ -8,13 +8,25 @@
     font-family: Arial, Helvetica, sans-serif;
     color: var(#fff);
 }
-header{ background-color:#0B545F; display: flex;
-    align-items: center; width: 95vw; padding: 0px 40px; height: 100px;
+
+body{
+    margin: 0;
+    padding: 0;
+    height: min-content;
+    width: 100%;
+}
+header{ 
+    background-color:#0B545F; display: flex;
+    align-items: center; 
+    /* width: 95vw;  */
+    padding: 0px 40px; 
+    height: 100px;
     justify-content: space-between;}
 
-    footer{background-color:#0B545F; display: flex;
+    footer{
+        background-color:#0B545F; display: flex;
         align-items: center;
-        width: 95vw;
+        /* width: 95vw; */
     
         padding: 0px 40px;
         box-shadow: 0px 4px 40px 0px var(#00000040);
@@ -28,12 +40,13 @@ header{ background-color:#0B545F; display: flex;
 
     .icons{width: 64px; height: 64px;
         background-color:#0B545F;color: #0B545F; }
-    .pic{width: 1440px; height: 484px;
-        box-sizing: border-box; background-color: #fefefe;}
-
-    .userImg{width: 200px; height: 200px;
-    position: relative; left: 85px;
-    
+        .pic{
+            width: inherit; 
+            height: 420px;
+            box-sizing: border-box; background-color: #fefefe;}
+        
+    .userImg{
+        width: 150px; height: 150px;
     }
 
     input { 
@@ -69,15 +82,17 @@ header{ background-color:#0B545F; display: flex;
                 border: none;}  
 
                 .center-box {
-                    width:544px ;
-                    height:244px ;
-                    position: relative; left: 150px;
-                    bottom: 250px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width:100% ;
+                    height:max-content ;
+                    margin-top: 20px;
+                    gap: 5vw;
+                   
                 }
 
-                .sentences{
-                    font-size: 50px; position: relative; left: 900px;
-                top: 200px;}
+              
                 .footer-contact {
                     display: flex;
                     gap: 10px;
@@ -176,12 +191,35 @@ header{ background-color:#0B545F; display: flex;
                     align-items: center;
                     
                 }
-                p{
-                    width: fit-content;
-                }
+                
                 form{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
                     width: max-content;
+                    gap: 15px;
                 }
-                fieldset{
+               
+
+
+                .sentences{
+                    display: flex;
                     width: fit-content;
+                    align-items: center;
+                    justify-content: center;
+                 
                 }
+                p{
+                    
+                    width: fit-content;
+                    font-family: Kaisei Tokumin;
+                    font-size: 46px;
+                    font-weight: 600;
+                    line-height: 65px;
+                    letter-spacing: 0.16em;
+                    text-align: center;
+                    margin-bottom: 0;
+            
+                }
+               
