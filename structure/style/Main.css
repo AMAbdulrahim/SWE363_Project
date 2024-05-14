@@ -1,5 +1,5 @@
 :root {
-    width: 100vw;
+    /* width: 100vw; */
     display: flex;
     justify-content: center;
     scrollbar-width: none;
@@ -11,6 +11,14 @@
 
 
 }
+body{
+    margin: 0;
+}
+main{
+    height: min-content;
+}
+
+
 
 header{ background-color:#0B545F; display: flex;
     align-items: center; width: 95vw; padding: 0px 40px; height: 100px;
@@ -30,7 +38,8 @@ footer{background-color:#0B545F; display: flex;
 
 .pic{width: 1440px; height: 484px;
     box-sizing: border-box; background-color: #fefefe;}
-    .sentences{font-size: 30px; position: relative; left: 600px; text-align: justify; top: 50px;}
+
+    /* .sentences{font-size: 30px; position: relative; left: 600px; text-align: justify; top: 50px;} */
 
 
 
@@ -128,9 +137,8 @@ footer{background-color:#0B545F; display: flex;
     #Volunteer{
         
         color: white;
-        position: relative;
-        left: 500px;
-        top: 20px;
+        margin-right: 10px;
+        
     }
     #vol{text-decoration: none;}
 
@@ -142,3 +150,27 @@ footer{background-color:#0B545F; display: flex;
         
     }
     #log{text-decoration: none;}
+
+
+    main{
+        width: inherit;
+    }
+    .sentences{
+        display: flex;
+        width: inherit;
+        align-items: center;
+        justify-content: center;
+     
+    }
+    p{
+        
+        width: fit-content;
+        font-family: Kaisei Tokumin;
+font-size: 46px;
+font-weight: 750;
+line-height: 80px;
+letter-spacing: 0.08em;
+text-align: center;
+margin-bottom: 0;
+
+    }

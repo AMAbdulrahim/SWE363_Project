@@ -30,22 +30,26 @@
 </div>
 <br>
 <div class="center-box">
-    <fieldset>
+    
         
         <form method="POST" action="http://localhost:8000/login" onsubmit="return validateLogin()">
-            <p>
+            
                 <input type="text" name="email" id="Email" placeholder="Email">
-            </p>
-            <p>
-                <input type="password" name="password" id="Password" placeholder="Password">
-                <input id="passVisBtn" type="checkbox" onclick="togglePasswordVisibility()">
-                
-            </p>
-            <button type="submit">Login</button>
+           
+            
+                <div style="display: flex; align-items: center; justify-content: center;">
+                    <input style="width: 500px;" type="password" name="password" id="Password" placeholder="Password">
+                    <input style="width: 35px;height:35px" id="passVisBtn" type="checkbox" onclick="togglePasswordVisibility()">
+                    
+                </div>
+           
+            <button id="loginBtn" type="submit">Login</button>
+            <a href="/Signup.html"  class="signup-text">Don’t have an account? (sign up) </a>
+
         </form>
         
-    </fieldset>
-    <div><a href="/Signup.html"  class="signup-text">Don’t have an account? (sign up) </a></div>
+   
+    
     
 </div>
     <img src="/images/cong.png" alt="congratulation" class="pic">

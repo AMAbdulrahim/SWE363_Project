@@ -14,8 +14,18 @@
     <script src="/script/userData.js"></script>
     <title>Profile</title>
 </head>
-
 <body>
+    <style>
+        .des{
+            max-width: 190px;
+        }
+        #reviewBtn{
+            margin: 0;
+        }
+        .card-des{
+            min-width: 90px;
+        }
+    </style>
 
     <header>
 
@@ -76,7 +86,7 @@
             </div>
 
             <div class="profile-hours">
-                <h3>Completed Events: <span id="completedHours"></span></h3>
+                <h3>Events: <span id="completedHours"></span></h3>
             </div>
 
         </div>
@@ -106,8 +116,8 @@
     </footer>
     
     <script>
-        function redirectToReview() {
-            window.location.href = "review.html";
+        function redirectToReview(id) {
+            window.location.href = `review.html??eventId=${id}`;
         }
     </script>
 

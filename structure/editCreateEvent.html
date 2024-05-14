@@ -96,50 +96,111 @@
     </footer>
 
     <script>
+        // document.addEventListener('DOMContentLoaded', function() {
+        //     const logoutLink = document.getElementById('logout');
+
+        //     logoutLink.addEventListener('click', function(event) {
+        //         event.preventDefault(); // Prevent the default link behavior
+
+        //         console.log("reached")
+        //         sessionStorage.clear();
+
+        //         // Redirect to the homepage
+        //         window.location.href = './index.html';
+        //     });
+        // });
+        // function submitEventForm() {
+        //     event.preventDefault();
+        //     var userDataJSON = sessionStorage.getItem('userData');
+        //     if (userDataJSON) {
+        //         var userData = JSON.parse(userDataJSON);                        
+        //         var profileEmailElement = userData.email;
+        //     }
+
+        //     const formData = new FormData(document.querySelector('form'));
+        //     formData.append('creatorEmail',profileEmailElement)
+        //     fetch('http://localhost:8000/submitEvent', {
+        //         method: 'POST',
+        //         body: formData  
+        //     })
+        //     .then(response => {
+        //         if (response.ok) {
+        //             window.location.href = '/creator_viewAvailableEvents.html';
+        //         } else {
+        //             alert('Failed to submit event. Please try again.');
+        //         }
+        //     })
+        //     .catch(error => {
+        //         console.error('Error submitting event:', error);
+        //         alert('Error in event submission: ' + error.message);
+        //     });
+        
+        //     return false; 
+
+        // }
         document.addEventListener('DOMContentLoaded', function() {
-            const logoutLink = document.getElementById('logout');
+            const urlParams = new URLSearchParams(window.location.search);
+            const eventId = urlParams.get('eventId'); // Get eventId from URL if available
+            const form = document.querySelector('form');
 
-            logoutLink.addEventListener('click', function(event) {
-                event.preventDefault(); 
+            if (eventId) {
+                form.addEventListener('submit', function(event) {
+                    submitEventForm(event, eventId); // Update existing event
+                });
+            } else {
+                form.addEventListener('submit', function(event) {
+                    submitEventForm(event); // Create new event
+                });
+            }
+        });
 
-                console.log("reached")
-                sessionStorage.clear();
 
+        // function submitEventForm(event, eventId = null) {
+        //     event.preventDefault(); // Prevent the form from submitting in the traditional way
+        //     const userDataJSON = sessionStorage.getItem('userData');
+        //     var profileEmailElement = userDataJSON ? JSON.parse(userDataJSON).email : '';
+
+        //     const formData = new FormData(document.querySelector('form'));
+        //     formData.append('creatorEmail', profileEmailElement);
+
+                // Redirect to the homepage
                 window.location.href = './index.html';
             });
         });
         function submitEventForm() {
             event.preventDefault();
             var userDataJSON = sessionStorage.getItem('userData');
-            
             if (userDataJSON) {
                 var userData = JSON.parse(userDataJSON);                        
                 var profileEmailElement = userData.email;
             }
 
             const formData = new FormData(document.querySelector('form'));
-            formData.append('creatorEmail',profileEmailElement)
-            fetch('http://localhost:8000/submitEvent', {
-                method: 'POST',
-                body: formData  
-            })
-            .then(response => {
-                if (response.ok) {
-                    window.location.href = '/creator_viewAvailableEvents.html';
-                } else {
-                    alert('Failed to submit event. Please try again.');
-                }
-            })
-            
-            .catch(error => {
-                console.error('Error submitting event:', error);
-                alert('Error in event submission: ' + error.message);
-            });
-            
-        
-            return false; 
+            formData.append('creatorEmail', profileEmailElement);
 
+            const fetchOptions = {
+                method: eventId ? 'PUT' : 'POST', // Choose method based on the presence of eventId
+                body: formData  
+            };
+
+            const fetchUrl = eventId ? `http://localhost:8000/events/${eventId}` : 'http://localhost:8000/submitEvent';
+
+            fetch(fetchUrl, fetchOptions)
+                .then(response => {
+                    if (response.ok) {
+                        window.location.href = '/creator_viewAvailableEvents.html'; // Redirect on success
+                    } else {
+                        alert('Failed to submit event. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error submitting event:', error);
+                    alert('Error in event submission: ' + error.message);
+                });
+
+            return false; // Prevent default form submission
         }
+
         </script>
         
 </body>

@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
         eventAnchor.setAttribute('href', '/creator_viewAvailableEvents.html');
     }
 
+    var eventCounter = Array.from({ length: 12 }, () => 0); // Initialize to an array of 12 zeros
+
     // Fetch events from the server that the user has volunteered for
     fetch(`http://localhost:8000/users/${userId}/events`)
         .then(response => response.json())
@@ -38,6 +40,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 completedEventsSpan.textContent = '0';
                 return;
             }
+            
+            // Loop through each event to count events for each month
+            events.forEach(event => {
+                // Extract month from event date and increment the corresponding counter
+                var eventDate = new Date(event.eventDate);
+                var monthIndex = eventDate.getMonth();
+                eventCounter[monthIndex]++;
+            });
+            sessionStorage.setItem('eventCounter', JSON.stringify(eventCounter));
+
+            // Log the event counts for each month
+            console.log('Event counter for each month:', eventCounter);
+
             //update the user completed hours 
             completedEventsSpan.textContent = events.length
             
@@ -45,32 +60,41 @@ document.addEventListener('DOMContentLoaded', function () {
                 var profileEventInfo = document.querySelector('.card-holder');
                 var card = document.createElement('div');
                 card.classList.add('card');
+                var eventDate = new Date(event.eventDate);
+                var currentDate = new Date();
                 card.innerHTML = `
-                <div class="img-card">
-                    <img id="event-img" src="${event.eventImage || '/images/card-img-placeholder.png'}" alt="Event Image">
-                </div>
-                <div class="des">
-                    <h1 id="event-name-card">${event.eventName}</h1>
-                    <h5 id="event-des">${event.eventDes}</h5>
-                </div>
-                <div class="card-des">
-                            <div>
-                                <h5 id="event-date">Date: ${new Date(event.eventDate).toLocaleDateString()}</h5>
-                                <h5 id="event-time">Time: ${event.eventTime}</h5>
-                            </div>
-                            <div class="review-card">
-                                <button id="reviewBtn" onclick="redirectToReview()">Review</button>
-                            </div>
+                    <div class="img-card">
+                    <a href="event.html?eventId=${event._id}"><img id="event-img" src="${event.eventImage || '/images/card-img-placeholder.png'}" alt="Event Image"></a>
+                    </div>
+                    <div class="des">
+                        <h1 id="event-name-card">${event.eventName}</h1>
+                        <h5 id="event-des">${event.eventDes}</h5>
+                    </div>
+                    <div class="card-des">
+                        <div>
+                            <h5 id="event-date">${eventDate.toLocaleDateString()}</h5>
+                            <h5 id="event-time">${event.eventTime}</h5>
                         </div>
-    
-            `;
+                    <div class="review-card">
+                `;
+
+                // Add the review button only if the event date is in the past
+                if (eventDate < currentDate) {
+                    if(userData.userType ==="creator"){
+                        card.innerHTML += ` <a href="CreatorReview.html?eventId=${event._id}"><button id="reviewBtn">Reviews</button></a>`;
+                    }
+                    else{
+                        card.innerHTML += ` <a href="review.html?eventId=${event._id}"><button id="reviewBtn">Review</button></a>`;
+                    }
+                }
+                card.innerHTML += `</div></div>`;
                 profileEventInfo.appendChild(card);
-                // cardsSection.appendChild(cardDiv);
             });
         })
         .catch(error => {
             console.error('Error fetching volunteered events:', error);
         });
+
 });
 
 

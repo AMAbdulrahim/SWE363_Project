@@ -47,10 +47,31 @@ const eventSchema = new mongoose.Schema({
     month:{ type:String},
     //
     
-    activity:{
-        moth: String,
-        hours: Number
-    }
+//     activity:{
+// <<<<<<< HEAD
+//         month: String,
+//         numberOfEvents: Number
+//     }
+// =======
+//         moth: String,
+//         hours: Number
+//     },
+    reviews:
+    [{userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    rating: {
+        type: Number,
+        required: true,
+        min: 1,   // Minimum rating value
+        max: 5    // Maximum rating value
+    },
+    text: {
+        type: String,
+        required: true
+    }}]
 });
 
 eventSchema.plugin(autoIncr,{inc_field:'id'})

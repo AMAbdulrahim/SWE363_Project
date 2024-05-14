@@ -77,10 +77,6 @@ app.post('/user', async (req, res) => {
     }
 });
 
-
-
-
-
 // Define Login Route
 app.post('/login', async (req, res) => {
     try {
@@ -128,6 +124,27 @@ app.get('/events/:eventId', async (req, res) => {
         res.json(event);
     } catch (error) {
         res.status(500).json({ error: 'Error fetching event: ' + error.message });
+    }
+});
+
+//update event 
+app.put('/events/:eventId', async (req, res) => {
+    const { eventId } = req.params;
+    const eventUpdates = req.body;
+    console.log(eventId);
+    console.log(eventUpdates);
+
+    try {
+        // Update the event with new data
+        const updatedEvent = await Event.findByIdAndUpdate(eventId, eventUpdates, { new: true });
+
+        if (!updatedEvent) {
+            return res.status(404).send('Event not found');
+        }
+
+        res.json(updatedEvent);
+    } catch (error) {
+        res.status(500).json({ error: 'Error updating event: ' + error.message });
     }
 });
 
@@ -345,7 +362,44 @@ app.get('/user/:userId/monthlyActivity', async (req, res) => {
     }
 });
 
+app.post('/events/:eventId/reviews', async (req, res) => {
+    try {
+        const { userId, rating, text } = req.body;
+        const { eventId } = req.params;
 
+        if (!userId || !rating || !text) {
+            return res.status(400).json({ message: 'All fields are required' });
+        }
+
+        const event = await Event.findById(eventId);
+        if (!event) {
+            return res.status(404).json({ message: 'Event not found' });
+        }
+
+        // Add the review to the event's reviews array
+        event.reviews.push({ userId, rating, text });
+
+        await event.save();
+        res.status(201).json({ message: 'Review added successfully', review: { userId, rating, text } });
+    } catch (error) {
+        console.error('Failed to add review:', error);
+        res.status(500).json({ message: 'Failed to add review', error: error.message });
+    }
+});
+
+// Assuming your server is set up with Express and uses Mongoose to interact with MongoDB
+app.get('/users/:userId', async (req, res) => {
+    try {
+        const user = await User.findById(req.params.userId).select('name'); // Only fetch the user's name
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+        res.json(user);
+    } catch (error) {
+        console.error("Error fetching user:", error);
+        res.status(500).json({ message: 'Error fetching user details', error: error.message });
+    }
+});
 
 
 // Connect to MongoDB

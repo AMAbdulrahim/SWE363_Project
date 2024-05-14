@@ -24,31 +24,22 @@
     </header>
 
     
-<div class="sentences">
-    <p>Volunteers do<br>
-        not necessarily <br>
-        have the time,<br>
-        they have the<br>
-        heart.</p>
-</div>
-<br>
+
+   
+
 
 <div class="center-box">
-    <fieldset>
 
         <form method="POST" action="http://localhost:8000/user" onsubmit="return validateForm()">
             <img src="/images/pfp.png" alt="UserImg" class="userImg">
-            
-            <p>
+
+           
                 <input type="text" name="name" id="Name" placeholder="Name">
-            </p>
-            <p>
+           
                 <input type="text" name="email" id="Email" placeholder="Email">
-            </p>
-            <p>
+           
                 <input type="text" name="city" id="City" placeholder="City">
-            </p>
-            <p>
+            
                 <div class="radio-container">
                     <label class="radioBtnLbl">
                         <input class="radioBtn" type="radio" name="userType" value="creator" >
@@ -59,22 +50,27 @@
                         Volunteer
                     </label>
                 </div>
-            </p>
             
-            <p>
                 <div class="pass-container">
                     <input type="password" name="password" id="Password" placeholder="Password">
                     <input id="passVisBtn" type="checkbox" onclick="togglePasswordVisibility()">
                 </div>
 
-            </p>
-            <input id="signupBtn" type="submit" value="Signup">
+                 <input id="signupBtn" type="submit" value="Signup">
         </form>
+
+
+        <div class="right-sentence">
+            <p>Volunteers do<br>
+                not necessarily <br>
+                have the time,<br>
+                they have the<br>
+                heart.</p>
+        </div>
         
-    </fieldset>
+        
     
 </div>
-
 
 
 

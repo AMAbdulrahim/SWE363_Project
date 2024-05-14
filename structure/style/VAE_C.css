@@ -78,9 +78,15 @@ main {
   margin: 20px 50px;
   padding: 20px;
   overflow: scroll;
-  scrollbar-width: none;
+  overflow-y : hidden;
+  /* scrollbar-width: none; */
 
 }
+
+
+
+::-webkit-scrollbar{width:6px;border-left:1px solid #E6ECF8;}
+::-webkit-scrollbar-thumb{background-color:var(--color-header-footer);}
 
 main>h1 {
 
