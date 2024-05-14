@@ -45,32 +45,63 @@ document.addEventListener('DOMContentLoaded', function () {
                 var profileEventInfo = document.querySelector('.card-holder');
                 var card = document.createElement('div');
                 card.classList.add('card');
-                card.innerHTML = `
-                <div class="img-card">
-                    <img id="event-img" src="${event.eventImage || '/images/card-img-placeholder.png'}" alt="Event Image">
-                </div>
-                <div class="des">
-                    <h1 id="event-name-card">${event.eventName}</h1>
-                    <h5 id="event-des">${event.eventDes}</h5>
-                </div>
-                <div class="card-des">
-                            <div>
-                                <h5 id="event-date">${new Date(event.eventDate).toLocaleDateString()}</h5>
-                                <h5 id="event-time">${event.eventTime}</h5>
-                            </div>
-                            <div class="review-card">
-                                <button id="reviewBtn" onclick="redirectToReview()">Review</button>
-                            </div>
-                        </div>
+                var eventDate = new Date(event.eventDate);
+                var currentDate = new Date();
+            //     card.innerHTML = `
+            //     <div class="img-card">
+            //         <img id="event-img" src="${event.eventImage || '/images/card-img-placeholder.png'}" alt="Event Image">
+            //     </div>
+            //     <div class="des">
+            //         <h1 id="event-name-card">${event.eventName}</h1>
+            //         <h5 id="event-des">${event.eventDes}</h5>
+            //     </div>
+            //     <div class="card-des">
+            //                 <div>
+            //                     <h5 id="event-date">${new Date(event.eventDate).toLocaleDateString()}</h5>
+            //                     <h5 id="event-time">${event.eventTime}</h5>
+            //                 </div>
+            //                 <div class="review-card">
+            //                     <button id="reviewBtn" onclick="redirectToReview()">Review</button>
+            //                 </div>
+            //             </div>
     
-            `;
+            // `;
+                card.innerHTML = `
+                    <div class="img-card">
+                    <a href="event.html?eventId=${event._id}"><img id="event-img" src="${event.eventImage || '/images/card-img-placeholder.png'}" alt="Event Image"></a>
+                    </div>
+                    <div class="des">
+                        <h1 id="event-name-card">${event.eventName}</h1>
+                        <h5 id="event-des">${event.eventDes}</h5>
+                    </div>
+                    <div class="card-des">
+                        <div>
+                            <h5 id="event-date">${eventDate.toLocaleDateString()}</h5>
+                            <h5 id="event-time">${event.eventTime}</h5>
+                        </div>
+                    <div class="review-card">
+                `;
+
+                // Add the review button only if the event date is in the past
+                if (eventDate < currentDate) {
+                    if(userData.userType ==="creator"){
+                        card.innerHTML += `<button id="reviewBtn" onclick="redirectToReview()">Reviews</button>`;
+                    }
+                    else{
+                        card.innerHTML += `<button id="reviewBtn" onclick="redirectToReview()">Review</button>`;
+                    }
+                }
+                card.innerHTML += `</div></div>`;
                 profileEventInfo.appendChild(card);
-                // cardsSection.appendChild(cardDiv);
             });
         })
         .catch(error => {
             console.error('Error fetching volunteered events:', error);
         });
+
+        function redirectToEvent(){
+            window.location.href = 'event.html';
+        }
 });
 
 

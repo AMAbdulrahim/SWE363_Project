@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                             ${isPrevious ? `
                             <div class="review-card">
-                                <button id="reviewBtn" onclick="redirectToReview()">Review</button>
+                            <a href="review.html"><button id="reviewBtn">Review</button></a>
                             </div>` : `
                             <div class="card-button" onclick="event.stopPropagation();">
                                 <button class="add-button" onclick="deleteEvent('${event._id}', this)">
@@ -114,6 +114,8 @@ function navigateToEvent(eventId) {
     window.location.href = `event.html?eventId=${eventId}`;
 }
 
+
+//add the id when the review page is ready
 function redirectToReview() {
     window.location.href = "review.html"; 
 }
