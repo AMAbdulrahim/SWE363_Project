@@ -1,5 +1,5 @@
 :root {
-    width: 100vw;
+    /* width: 100vw; */
     display: flex;
     justify-content: center;
     scrollbar-width: none;
@@ -15,7 +15,7 @@ body{
     margin: 0;
 }
 main{
-    height: max-content;
+    height: min-content;
 }
 
 
@@ -168,8 +168,9 @@ footer{background-color:#0B545F; display: flex;
         font-family: Kaisei Tokumin;
 font-size: 46px;
 font-weight: 750;
-line-height: 90px;
+line-height: 80px;
 letter-spacing: 0.08em;
 text-align: center;
+margin-bottom: 0;
 
     }
