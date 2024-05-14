@@ -115,6 +115,7 @@ app.get('/events', async (req, res) => {
 
 //get event by id 
 app.get('/events/:eventId', async (req, res) => {
+    console.log("jhbjbjh")
     try {
         const event = await Event.findById(req.params.eventId);
         if (!event) {
@@ -123,6 +124,27 @@ app.get('/events/:eventId', async (req, res) => {
         res.json(event);
     } catch (error) {
         res.status(500).json({ error: 'Error fetching event: ' + error.message });
+    }
+});
+
+//update event 
+app.put('/events/:eventId', async (req, res) => {
+    const { eventId } = req.params;
+    const eventUpdates = req.body;
+    console.log(eventId);
+    console.log(eventUpdates);
+
+    try {
+        // Update the event with new data
+        const updatedEvent = await Event.findByIdAndUpdate(eventId, eventUpdates, { new: true });
+
+        if (!updatedEvent) {
+            return res.status(404).send('Event not found');
+        }
+
+        res.json(updatedEvent);
+    } catch (error) {
+        res.status(500).json({ error: 'Error updating event: ' + error.message });
     }
 });
 
